@@ -1,0 +1,151 @@
+@charset "UTF-8";
+/*------------------------------   GENERIQUE  ---------------------------*/
+body {
+  width: 100%;
+  font-family: "roboto";
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 1.2em;
+  padding: 20px 0 5px 10px;
+}
+
+/*--------------------------  SELECTEURS COMMUNS  -------------------------*/
+.btn {
+  width: 230px;
+  color: #ffff;
+  font-weight: bold;
+  background-color: #ff7ad9;
+  border-radius: 30px;
+  padding: 15px;
+  border: none;
+}
+
+.btn:hover {
+  background-color: darken #ff7ad9 10%;
+}
+
+/*--------------------------------  HEADER  --------------------------------*/
+header img {
+  width: 150px;
+  padding-bottom: 15px;
+}
+
+/*---------------------------------- INTRO ----------------------------------*/
+.intro {
+  text-align: center;
+  background-color: #edebeb;
+  font-family: "roboto";
+}
+
+.intro .intro__loc {
+  background-color: #ded9db;
+  /* box-shadow: inset; ombre à rajouter */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1em;
+}
+
+.intro .intro__loc i {
+  padding-right: 15px;
+}
+
+.intro .intro__res {
+  padding: 0 30px 30px 30px;
+}
+
+.function {
+  margin: auto;
+}
+
+/* Contenu FONCTIONNEMENT - 1 selecteur <function__> appliqué pour les 3 étiquettes*/
+.function__item {
+  width: 90%;
+  margin: auto;
+  background-color: #edebeb;
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 15px;
+}
+
+.function__item__number {
+  background-color: #9356DC;
+  color: #ffff;
+  border-radius: 100%;
+  padding: 5px 8px 5px 8px;
+  position: relative;
+  left: -8px;
+}
+
+.function__item__text i {
+  padding: 0 20px 0 20px;
+  color: grey;
+}
+
+/*-----------------------------------  MAIN -----------------------*/
+.main {
+  background-color: #edebeb;
+}
+
+.main__item figure {
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.img {
+  width: 100%;
+  border-radius: 10px 0 0 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.main :last-child {
+  margin-bottom: 15px;
+}
+
+/*-------------------------------------- FOOTER ------------------------------*/
+footer {
+  background-color: #464444;
+  color: #fff;
+  padding: 20px 0 10px 15px;
+}
+
+footer h4 {
+  display: inline;
+  font-family: "shrikhand";
+  font-size: 1.2em;
+}
+
+footer .footer__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  line-height: 0.2em;
+}
+
+footer i {
+  padding-right: 15px;
+}
+/*# sourceMappingURL=styles.css.map */
