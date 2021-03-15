@@ -1,0 +1,13 @@
+.btn {
+    width: 230px;
+    color: #ffff;
+    font-weight: bold;
+    background-color: $secondary-color;
+    border-radius: 30px;
+    padding: 15px;
+    border: none;
+    &:hover {
+        background-color: lighten($secondary-color, 8%);
+
+    }
+}

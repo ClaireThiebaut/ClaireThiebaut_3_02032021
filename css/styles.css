@@ -26,16 +26,17 @@ h2 {
 }
 
 .btn:hover {
-  background-color: darken #ff7ad9 10%;
+  background-color: #ffa3e5;
 }
 
 /*--------------------------------  HEADER  --------------------------------*/
 header img {
   width: 150px;
   padding-bottom: 15px;
+  margin: auto;
 }
 
-/*---------------------------------- INTRO ----------------------------------*/
+/*---------------------------------- SECTION 1 : INTRO ----------------------------------*/
 .intro {
   text-align: center;
   background-color: #edebeb;
@@ -65,11 +66,13 @@ header img {
   padding: 0 30px 30px 30px;
 }
 
+/*----------------------------- SECTION 2 : FUNCTION  -----------------------------*/
 .function {
   margin: auto;
 }
 
-/* Contenu FONCTIONNEMENT - 1 selecteur <function__> appliqué pour les 3 étiquettes*/
+/* Contenu FONCTIONNEMENT :
+1 selecteur <function__> appliqué pour les 3 étiquettes*/
 .function__item {
   width: 90%;
   margin: auto;
@@ -84,7 +87,11 @@ header img {
   margin-bottom: 15px;
 }
 
-.function__item__number {
+.function__item:hover {
+  background-color: rgba(147, 86, 220, 0.1);
+}
+
+.function__item .function__item__number {
   background-color: #9356DC;
   color: #ffff;
   border-radius: 100%;
@@ -93,7 +100,7 @@ header img {
   left: -8px;
 }
 
-.function__item__text i {
+.function__item .function__item__text i {
   padding: 0 20px 0 20px;
   color: grey;
 }
@@ -101,24 +108,69 @@ header img {
 /*-----------------------------------  MAIN -----------------------*/
 .main {
   background-color: #edebeb;
+  padding-bottom: 15px;
 }
 
-.main__item figure {
+.main .main__item {
+  width: 90%;
+  margin: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 15px;
+  margin-bottom: 15px;
 }
 
-.img {
+.main span {
+  background-color: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  z-index: 1;
+}
+
+figure {
+  margin: auto;
+}
+
+figure img {
   width: 100%;
-  border-radius: 10px 0 0 10px;
+  border-radius: 15px 15px 0 0;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.main :last-child {
-  margin-bottom: 15px;
+figcaption {
+  color: black;
+  padding: 0 10px 0 10px;
 }
 
+figcaption h3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+figcaption i {
+  font-size: 1.5em;
+}
+
+/*.new {
+    display: inline;
+    padding: 10px;
+    background-color: $background-color-new;
+    color: $font-color-new;
+    font-weight: bold;
+    position: relative;
+    bottom: 300px;
+    left: 280px;
+}*/
 /*-------------------------------------- FOOTER ------------------------------*/
 footer {
   background-color: #464444;
