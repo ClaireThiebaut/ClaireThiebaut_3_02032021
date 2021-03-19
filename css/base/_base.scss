@@ -1,0 +1,43 @@
+body {
+    width: 100%;
+    font-family: $font-text;
+}
+
+a {
+    text-decoration: none;
+}
+h1 { /* homepage titre RESERVEZ LE MENU QUI VOUS CONVIENT */
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+h2 { /* homepage titre FONCTIONNEMENT et RESTAURANTS */
+    font-size: 1.5em;
+    width: 90%;
+    margin: auto;
+    padding: 20px 0 20px 0;
+}
+
+
+/*h3 : homepage: nestés dans figcaption */
+
+
+h4 { /*menu titre des resto avec coeur à liker - display: flex*/
+    font-family: $font-title;
+    font-size: 1.6em;
+    display: flex; 
+    justify-content: space-around;
+    padding-top: 20px;
+
+}
+
+h5 { /* menu titre des dishes__item*/
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding-bottom: 3px;
+}
+
+p {
+    font-size: 1em;
+}

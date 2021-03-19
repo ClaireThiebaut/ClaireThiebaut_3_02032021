@@ -1,5 +1,7 @@
 @charset "UTF-8";
-/*------------------------------   GENERIQUE  ---------------------------*/
+/* POLICES */
+/* COULEURS */
+/*utilisé aussi pour box-shadow*/
 body {
   width: 100%;
   font-family: "roboto";
@@ -9,34 +11,113 @@ a {
   text-decoration: none;
 }
 
-h2 {
-  font-size: 1.2em;
-  padding: 20px 0 5px 10px;
+h1 {
+  /* homepage titre RESERVEZ LE MENU QUI VOUS CONVIENT */
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
-/*--------------------------  SELECTEURS COMMUNS  -------------------------*/
-.btn {
-  width: 230px;
-  color: #ffff;
+h2 {
+  /* homepage titre FONCTIONNEMENT et RESTAURANTS */
+  font-size: 1.5em;
+  width: 90%;
+  margin: auto;
+  padding: 20px 0 20px 0;
+}
+
+/*h3 : homepage: nestés dans figcaption */
+h4 {
+  /*menu titre des resto avec coeur à liker - display: flex*/
+  font-family: "shrikhand";
+  font-size: 1.6em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-top: 20px;
+}
+
+h5 {
+  /* menu titre des dishes__item*/
+  margin: 0;
+  font-size: 1.2em;
   font-weight: bold;
-  background-color: #ff7ad9;
+  padding-bottom: 3px;
+}
+
+p {
+  font-size: 1em;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 15px;
+}
+
+header img {
+  width: 150px;
+}
+
+.header--arrow_left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header--arrow_left img {
+  width: 150px;
+}
+
+.header--arrow_left i {
+  color: black;
+}
+
+footer {
+  background-color: #464444;
+  color: #fff;
+  padding: 20px 0 10px 20px;
+}
+
+footer .logo_title {
+  font-family: "shrikhand";
+  font-size: 1.5em;
+}
+
+i {
+  padding-right: 15px;
+}
+
+a {
+  color: #fff;
+}
+
+.btn {
+  width: 250px;
+  color: #ffff;
+  font-size: 1.1em;
+  font-weight: bold;
+  background-color: #9356DC;
+  -webkit-box-shadow: inset 20px 20px 50px #ff7ad9, 5px 5px 5px #ded9db;
+          box-shadow: inset 20px 20px 50px #ff7ad9, 5px 5px 5px #ded9db;
   border-radius: 30px;
-  padding: 15px;
+  padding: 20px;
   border: none;
 }
 
 .btn:hover {
-  background-color: #ffa3e5;
+  background-color: #ae80e5;
 }
 
-/*--------------------------------  HEADER  --------------------------------*/
-header img {
-  width: 150px;
-  padding-bottom: 15px;
-  margin: auto;
-}
-
-/*---------------------------------- SECTION 1 : INTRO ----------------------------------*/
+/*-------------------------------- SECTION INTRO ----------------------------*/
 .intro {
   text-align: center;
   background-color: #edebeb;
@@ -58,26 +139,28 @@ header img {
   font-size: 1em;
 }
 
-.intro .intro__loc i {
+.intro i {
   padding-right: 15px;
 }
 
-.intro .intro__res {
+.intro__res {
   padding: 0 30px 30px 30px;
 }
 
-/*----------------------------- SECTION 2 : FUNCTION  -----------------------------*/
+/*------------------------ SECTION FONCTIONNEMENT --------------------------*/
 .function {
   margin: auto;
 }
 
 /* Contenu FONCTIONNEMENT :
-1 selecteur <function__> appliqué pour les 3 étiquettes*/
+    1 selecteur <function__> appliqué pour les 3 étiquettes*/
 .function__item {
   width: 90%;
   margin: auto;
   background-color: #edebeb;
   border-radius: 15px;
+  -webkit-box-shadow: 3px 3px 5px #ded9db;
+          box-shadow: 3px 3px 5px #ded9db;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -88,7 +171,7 @@ header img {
 }
 
 .function__item:hover {
-  background-color: rgba(147, 86, 220, 0.1);
+  background-color: rgba(104, 50, 170, 0.1);
 }
 
 .function__item .function__item__number {
@@ -105,7 +188,7 @@ header img {
   color: grey;
 }
 
-/*-----------------------------------  MAIN -----------------------*/
+/*----------------------------------- SECTION 3 : MAIN -----------------------*/
 .main {
   background-color: #edebeb;
   padding-bottom: 15px;
@@ -113,6 +196,7 @@ header img {
 
 .main .main__item {
   width: 90%;
+  position: relative;
   margin: auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -122,14 +206,14 @@ header img {
 }
 
 .main span {
-  background-color: red;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  background-color: #6ff5ee;
+  color: #0d998b;
+  padding: 5px 10px 5px 10px;
   z-index: 1;
+  display: inline block;
+  position: absolute;
+  right: 20px;
+  top: 15px;
 }
 
 figure {
@@ -138,6 +222,7 @@ figure {
 
 figure img {
   width: 100%;
+  max-height: 490px;
   border-radius: 15px 15px 0 0;
   -o-object-fit: cover;
      object-fit: cover;
@@ -145,7 +230,7 @@ figure img {
 
 figcaption {
   color: black;
-  padding: 0 10px 0 10px;
+  padding: 0 40px 5px 20px;
 }
 
 figcaption h3 {
@@ -155,49 +240,86 @@ figcaption h3 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.2em;
+  margin: 5px 0 0 0;
 }
 
 figcaption i {
   font-size: 1.5em;
+  padding-top: 15px;
 }
 
-/*.new {
-    display: inline;
-    padding: 10px;
-    background-color: $background-color-new;
-    color: $font-color-new;
-    font-weight: bold;
-    position: relative;
-    bottom: 300px;
-    left: 280px;
-}*/
-/*-------------------------------------- FOOTER ------------------------------*/
-footer {
-  background-color: #464444;
-  color: #fff;
-  padding: 20px 0 10px 15px;
+figcaption p {
+  margin-top: 0;
 }
 
-footer h4 {
-  display: inline;
-  font-family: "shrikhand";
-  font-size: 1.2em;
+.background img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
 }
 
-footer .footer__link {
+.menu {
+  position: relative;
+  top: 200px;
+  background-color: #edebeb;
+  border-radius: 40px 40px 0 0;
+}
+
+.dishes__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  line-height: 0.2em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 30px;
 }
 
-footer i {
-  padding-right: 15px;
+.dishes__content .subtitle {
+  padding-bottom: 4px;
+  border-bottom: solid #99e2d0 2px;
+  margin: 20px;
+}
+
+.dishes__item {
+  width: 300px;
+  margin-bottom: 15px;
+  background-color: #fff;
+  border-radius: 15px 15px;
+  padding: 15px;
+}
+
+.dishes__item .price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.dishes__item p {
+  margin: 0;
+}
+
+.dishes__starters, .dishes__main, .dishes__deserts {
+  margin-bottom: 30px;
+}
+
+.btn {
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,49 @@
+
+.background img{
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+.menu {
+    position: relative;
+    top: 200px;
+    background-color: $background-color-grey;
+    border-radius: 40px 40px 0 0;
+}
+
+.dishes__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+    .subtitle {
+        padding-bottom: 4px;
+        border-bottom: solid $tertiary-color 2px;
+        margin: 20px;
+    }
+}
+
+.dishes__item {
+    width: 300px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    border-radius: 15px 15px;
+    padding: 15px;
+    .price {
+        display: flex;
+        justify-content: space-between;
+    }
+    p {
+        margin: 0;
+    }
+}
+
+.dishes__starters, .dishes__main, .dishes__deserts {
+    margin-bottom: 30px;
+}
+
+.btn {
+    justify-self: center;
+}
