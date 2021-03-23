@@ -15,44 +15,45 @@
         i {
             padding-right: 15px;
         }
-    }
     .intro__res {
         padding: 0 30px 30px 30px;
     }
+}
+ 
 
     /*------------------------ SECTION FONCTIONNEMENT --------------------------*/
-    .function {
-        margin: auto;
-    }
+.function {
+    margin: auto;
+}
     
     /* Contenu FONCTIONNEMENT :
     1 selecteur <function__> appliqué pour les 3 étiquettes*/
     
-    .function__item {
-        width: 90%;
-        margin: auto;
-        background-color: $background-color-grey;
-        border-radius: 15px;
-        box-shadow: 3px 3px 5px $background-color-loc;
-        display: flex; 
-        align-items: center;
-        margin-bottom: 15px;
-        &:hover {
-            background-color: rgba(104, 50, 170, 0.1);
-        }
-        .function__item__number {
-            background-color: $primary-color ;
-            color: #ffff;
-            border-radius: 100%;
-            padding: 5px 8px 5px 8px;
-            position: relative;
-            left: -8px;
-        }
-        .function__item__text i {
-            padding: 0 20px 0 20px;
-            color: grey;
-        }
+.function__item {
+    width: 90%;
+    margin: auto;
+    background-color: $background-color-grey;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px $background-color-loc;
+    display: flex; 
+    align-items: center;
+    margin-bottom: 15px;
+    &:hover {
+         background-color: rgba(104, 50, 170, 0.1);
     }
+    .function__item__number {
+        background-color: $primary-color;
+        color: #ffff;
+        border-radius: 100%;
+        padding: 5px 8px 5px 8px;
+        position: relative;
+        left: -8px;
+    }
+    .function__item__text i {
+        padding: 0 20px 0 20px;
+        color: grey;
+    }
+}
     
     /*----------------------------------- SECTION 3 : MAIN -----------------------*/
 .main {
@@ -92,19 +93,22 @@ figure {
 
 figcaption {
     color: black;
-    padding: 0 40px 5px 20px;
-    h3 {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 1.2em;
-        margin: 5px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2em;
+    padding: 8px;
+    .main__item__name {
+        display: flex; 
+        flex-direction: column;
     }
-    i {
-        font-size: 1.5em;
-        padding-top: 15px;
+    h3 {
+        margin: 0;
+        font-size: 1em;
     }
     p {
-        margin-top: 0;
+        margin: 0;
+        font-size: 0.8em;
     }
 }
+
+/* style de l'icone coeur dans le partiel _like_btn.scss */

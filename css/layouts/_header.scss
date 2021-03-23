@@ -1,21 +1,9 @@
 
 header {
-    display: flex; 
-    justify-content: center;
-    padding-bottom: 15px;
+    text-align: center;
+    padding: 5px;
     img {
         width: 150px;
     }
 }
 
-.header--arrow_left {
-    display: flex; 
-    justify-content: center;
-    img {
-        width: 150px;
-    }
-    i {
-        color: black;
-    }
-
-}

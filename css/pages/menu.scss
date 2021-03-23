@@ -7,7 +7,7 @@
 
 .menu {
     position: relative;
-    top: 200px;
+    top: 180px;
     background-color: $background-color-grey;
     border-radius: 40px 40px 0 0;
 }
@@ -39,6 +39,12 @@
         margin: 0;
     }
 }
+
+/*.dishes__item {
+    @include tablet {
+        width: 450px;
+    }
+}*/
 
 .dishes__starters, .dishes__main, .dishes__deserts {
     margin-bottom: 30px;

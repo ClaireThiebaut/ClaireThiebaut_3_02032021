@@ -51,34 +51,12 @@ p {
 }
 
 header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding-bottom: 15px;
+  text-align: center;
+  padding: 5px;
 }
 
 header img {
   width: 150px;
-}
-
-.header--arrow_left {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.header--arrow_left img {
-  width: 150px;
-}
-
-.header--arrow_left i {
-  color: black;
 }
 
 footer {
@@ -117,6 +95,54 @@ a {
   background-color: #ae80e5;
 }
 
+.like {
+  background-color: red;
+  position: relative;
+  z-index: 1;
+}
+
+.like :hover::after {
+  opacity: 1;
+}
+
+.like::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0;
+  color: #9356DC;
+  -webkit-transition: opacity 250ms;
+  transition: opacity 250ms;
+}
+
+/* .like {
+    box-sizing: content-box;
+    background-color: yellow;
+    position: relative;
+    z-index: 1;
+    :hover {
+        &.like--full  {
+            opacity: 1;
+        }
+    }
+}
+    .like--full {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        opacity: 0; 
+        color: $primary-color;
+        transition: opacity 250ms;
+    }
+}
+*/
 /*-------------------------------- SECTION INTRO ----------------------------*/
 .intro {
   text-align: center;
@@ -168,6 +194,9 @@ a {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 15px;
+  /*@include tablet {
+            width: 70%;
+        }*/
 }
 
 .function__item:hover {
@@ -230,32 +259,37 @@ figure img {
 
 figcaption {
   color: black;
-  padding: 0 40px 5px 20px;
-}
-
-figcaption h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   font-size: 1.2em;
-  margin: 5px 0 0 0;
+  padding: 8px;
 }
 
-figcaption i {
-  font-size: 1.5em;
-  padding-top: 15px;
+figcaption .main__item__name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+figcaption h3 {
+  margin: 0;
+  font-size: 1em;
 }
 
 figcaption p {
-  margin-top: 0;
+  margin: 0;
+  font-size: 0.8em;
 }
 
+/* style de l'icone coeur dans le partiel _like_btn.scss */
 .background img {
   width: 100%;
   -o-object-fit: cover;
@@ -265,7 +299,7 @@ figcaption p {
 
 .menu {
   position: relative;
-  top: 200px;
+  top: 180px;
   background-color: #edebeb;
   border-radius: 40px 40px 0 0;
 }
@@ -314,6 +348,11 @@ figcaption p {
   margin: 0;
 }
 
+/*.dishes__item {
+    @include tablet {
+        width: 450px;
+    }
+}*/
 .dishes__starters, .dishes__main, .dishes__deserts {
   margin-bottom: 30px;
 }
