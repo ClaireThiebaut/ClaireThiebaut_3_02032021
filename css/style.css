@@ -1,0 +1,274 @@
+@charset "UTF-8";
+/* POLICES */
+/* COULEURS */
+/*utilisé aussi pour box-shadow*/
+body {
+  width: 100%;
+  font-family: "roboto";
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  /* homepage titre RESERVEZ LE MENU QUI VOUS CONVIENT */
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+h2 {
+  /* homepage titre FONCTIONNEMENT et RESTAURANTS */
+  font-size: 1.5em;
+  width: 90%;
+  margin: auto;
+  padding: 20px 0 20px 0;
+}
+
+/*h3 : homepage: nestés dans figcaption */
+h4 {
+  /*menu titre des resto avec coeur à liker - display: flex*/
+  font-family: "shrikhand";
+  font-size: 1.6em;
+  padding-top: 20px;
+}
+
+h5 {
+  /* menu titre des dishes__item*/
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding-bottom: 3px;
+}
+
+p {
+  font-size: 1em;
+}
+
+header {
+  text-align: center;
+  padding: 5px;
+}
+header img {
+  width: 300px;
+}
+
+.intro {
+  text-align: center;
+  background-color: #edebeb;
+  font-family: "roboto";
+}
+.intro .intro__loc {
+  background-color: #ded9db;
+  /* box-shadow: inset; ombre à rajouter */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+}
+.intro i {
+  padding-right: 15px;
+}
+.intro .intro__res {
+  padding: 0 30px 30px 30px;
+}
+
+/*------------------------ P1 / SECTION FONCTIONNEMENT --------------------------*/
+.fct {
+  margin: auto;
+}
+
+/* Contenu FONCTIONNEMENT :
+1 selecteur <fct__> appliqué pour les 3 étiquettes*/
+.fct__select {
+  width: 90%;
+  margin: auto;
+  background-color: #edebeb;
+  border-radius: 15px;
+  box-shadow: 3px 3px 5px #ded9db;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.fct__select:hover {
+  background-color: rgba(104, 50, 170, 0.1);
+}
+.fct__select .fct__select__number {
+  background-color: #9356DC;
+  color: #ffff;
+  border-radius: 100%;
+  padding: 5px 8px 5px 8px;
+  position: relative;
+  left: -8px;
+}
+.fct__select .fct__select__text i {
+  padding: 0 20px 0 20px;
+  color: grey;
+}
+
+/*-----------------------------------P1 // restaurant ---------------------------*/
+.restaurant {
+  background-color: #edebeb;
+  padding-bottom: 15px;
+}
+.restaurant .restaurant__select {
+  width: 90%;
+  position: relative;
+  margin: auto;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.restaurant span {
+  background-color: #6ff5ee;
+  color: #0d998b;
+  padding: 5px 10px 5px 10px;
+  z-index: 1;
+  display: inline block;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+}
+
+figure {
+  margin: auto;
+}
+figure img {
+  width: 100%;
+  max-height: 490px;
+  border-radius: 15px 15px 0 0;
+  object-fit: cover;
+}
+
+figcaption {
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2em;
+  padding: 8px;
+}
+figcaption .restaurant__select__name {
+  display: flex;
+  flex-direction: column;
+}
+figcaption h3 {
+  margin: 0;
+  font-size: 1em;
+}
+figcaption p {
+  margin: 0;
+  font-size: 0.8em;
+}
+
+#full_heart {
+  color: blue;
+}
+#full_heart:hover {
+  transition: transform 400ms ease-in-out, color 300ms 300ms;
+  color: red;
+}
+
+.background img {
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+.menu {
+  position: relative;
+  top: 180px;
+  background-color: #edebeb;
+  border-radius: 40px 40px 0 0;
+}
+
+.menu__like {
+  /*vérifier si fonctionne. ajouté quand code bloqué.
+  !!!!!! HTML modifié que sur PALETTE DU GOUT. Si fonctionne, modifer les 3 autres HTML */
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+.menu__like h4 {
+  width: 300px;
+}
+.menu__like i {
+  font-size: 1.5em;
+}
+
+.dish__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+.dish__content .subtitle {
+  padding-bottom: 4px;
+  border-bottom: solid #99e2d0 2px;
+  margin: 20px;
+}
+
+.dish__select {
+  width: 300px;
+  margin-bottom: 15px;
+  background-color: #fff;
+  border-radius: 15px 15px;
+  padding: 15px 15px 0 15px;
+}
+.dish__select .price {
+  display: flex;
+  justify-content: space-between;
+}
+.dish__select p {
+  margin: 0;
+}
+
+#anim__selected {
+  position: relative;
+  right: -350px;
+  bottom: 20px;
+}
+
+.dish__starters, .dish__main, .dish__deserts {
+  margin-bottom: 30px;
+}
+
+.btn {
+  justify-self: center;
+}
+
+/* style de l'icone coeur dans le partiel _like_btn.scss */
+.btn {
+  width: 250px;
+  color: #ffff;
+  font-size: 1.1em;
+  font-weight: bold;
+  background-color: #9356DC;
+  box-shadow: inset 20px 20px 50px #ff7ad9, 5px 5px 5px #ded9db;
+  border-radius: 30px;
+  padding: 20px;
+  border: none;
+}
+.btn:hover {
+  background-color: #ae80e5;
+}
+
+footer {
+  background-color: #464444;
+  color: #fff;
+  padding: 20px 0 10px 20px;
+}
+footer .logo_title {
+  font-family: "shrikhand";
+  font-size: 1.5em;
+}
+footer i {
+  padding-right: 15px;
+}
+footer a {
+  color: #fff;
+}
+
+/*# sourceMappingURL=style.css.map */

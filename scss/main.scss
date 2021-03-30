@@ -1,0 +1,353 @@
+@import "./utils/variables";
+@import "./base/base";
+
+@mixin tablet {
+    @media screen and (min-width: 426px) and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media screen and (min-width: 769px) and (max-width: 1024px) { 
+        @content;
+    }
+}
+
+@mixin large_laptop {
+    @media screen and (min-width: 1025px) { 
+        @content;
+    }
+}
+
+// ******************************** HEADER *******************************
+header {
+    text-align: center;
+    padding: 5px;
+    img {
+        width: 300px;
+    }
+}
+
+
+.intro {
+    text-align: center;
+    background-color: $background-color-grey; 
+    font-family: $font-text;
+    .intro__loc {
+        background-color: $background-color-loc;
+        /* box-shadow: inset; ombre à rajouter */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1em;
+        }
+        i {
+            padding-right: 15px;
+        }
+    .intro__res {
+        padding: 0 30px 30px 30px;
+    }
+}
+ 
+
+    /*------------------------ P1 / SECTION FONCTIONNEMENT --------------------------*/
+.fct {
+    margin: auto;
+}
+    
+    /* Contenu FONCTIONNEMENT :
+    1 selecteur <fct__> appliqué pour les 3 étiquettes*/
+    
+.fct__select {
+    width: 90%;
+    margin: auto;
+    background-color: $background-color-grey;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px $background-color-loc;
+    display: flex; 
+    align-items: center;
+    margin-bottom: 15px;
+    &:hover {
+         background-color: rgba(104, 50, 170, 0.1);
+    }
+    .fct__select__number {
+        background-color: $primary-color;
+        color: #ffff;
+        border-radius: 100%;
+        padding: 5px 8px 5px 8px;
+        position: relative;
+        left: -8px;
+    }
+    .fct__select__text i {
+        padding: 0 20px 0 20px;
+        color: grey;
+    }
+}
+    
+    /*-----------------------------------P1 // restaurant ---------------------------*/
+.restaurant {
+    background-color: $background-color-grey;
+    padding-bottom: 15px;
+    .restaurant__select {
+        width: 90%;
+        position: relative;
+        margin: auto;
+        box-sizing: border-box;
+        background-color: #fff;
+        border-radius: 15px;
+        margin-bottom: 15px;
+    }
+}
+
+.restaurant span { //  Etiquette verte NOUVEAU 
+    background-color: $background-color-new;
+    color: $font-color-new;
+    padding: 5px 10px 5px 10px;
+    z-index: 1;
+    display: inline block;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+
+figure { 
+    margin: auto;
+    img {
+        width: 100%;
+        max-height: 490px;
+        border-radius: 15px 15px 0 0;
+        object-fit: cover;
+    }
+}
+
+figcaption {
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2em;
+    padding: 8px;
+    .restaurant__select__name {
+        display: flex; 
+        flex-direction: column;
+    }
+    h3 {
+        margin: 0;
+        font-size: 1em;
+    }
+    p {
+        margin: 0;
+        font-size: 0.8em;
+    }
+}
+
+// Animation COEUR 
+#full_heart  {
+    color: blue;
+    &:hover {
+        transition: transform 400ms ease-in-out,  color 300ms 300ms;
+        color: red;
+    }
+}
+
+
+// ************************************  4 PAGES MENU *****************************
+// **************************************** MENU **********************************
+// ********************************************************************************
+
+
+.background img{
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+.menu {
+    position: relative;
+    top: 180px;
+    background-color: $background-color-grey;
+    border-radius: 40px 40px 0 0;
+}
+
+.menu__like { /*vérifier si fonctionne. ajouté quand code bloqué.
+    !!!!!! HTML modifié que sur PALETTE DU GOUT. Si fonctionne, modifer les 3 autres HTML */
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    h4 {
+        width: 300px;
+    }
+    i {
+        font-size: 1.5em;
+    }
+}
+
+.dish__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+    .subtitle {
+        padding-bottom: 4px;
+        border-bottom: solid $tertiary-color 2px;
+        margin: 20px;
+    }
+}
+
+.dish__select {
+    width: 300px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    border-radius: 15px 15px;
+    padding: 15px 15px 0 15px;
+        // overflow: hidden;
+    .price {
+        display: flex;
+        justify-content: space-between;
+    }
+    p {
+        margin: 0;
+    }
+} 
+
+#anim__selected {
+    position: relative;
+    right: -350px;
+    bottom: 20px;
+}
+
+// .dish__item {
+//     @include tablet {
+//         width: 450px;
+//     }
+// }
+
+.dish__starters, .dish__main, .dish__deserts {
+    margin-bottom: 30px;
+}
+
+.btn {
+    justify-self: center;
+}
+/* style de l'icone coeur dans le partiel _like_btn.scss */
+
+// ******************************** BTN *************************************
+.btn {
+    width: 250px;
+    color: #ffff;
+    font-size: 1.1em;
+    font-weight: bold;
+    background-color: $primary-color;
+    box-shadow: inset 20px 20px 50px $secondary-color, 5px 5px 5px $background-color-loc;         
+    border-radius: 30px;
+    padding: 20px;
+    border: none;
+    &:hover {
+        background-color: lighten($primary-color, 10%);
+    }
+}
+
+
+// #fullHeart {
+//     position: relative;
+//     right: 5%;
+//     top: 15px;
+//     font-size: 1.1em;
+//     background: linear-gradient($secondary-color, $primary-color);
+//     background-clip: text;
+//     color: transparent;
+// }
+// .emptyHeart {
+//     background-color: blue;
+//     position: relative;
+//     right: 5%;
+//     top: 15px;
+//     font-size: 1.1em;
+//     z-index: 2;
+//     &:hover +.stock {
+//         animation: filling 2s forwards;
+//     }
+//     &:hover {
+//         animation: colorChange 1s forwards;
+//     }
+// }
+// .stock {
+//     height: 20px;
+//     width: 20px;
+//     background-color: #fff;
+//     position: relative;
+//     right: 5%;
+//     top: 13px;
+//     z-index: 1;
+// }
+
+
+
+// .like {
+//     background-color: red;
+//     position: relative;
+//     z-index: 1;
+//     :hover {
+//         &::after  {
+//             opacity: 1;
+//     }
+// }
+//     &::after {
+//         content:"";
+//         position: absolute;
+//         top: 0;
+//         right: 0;
+//         bottom: 0;
+//         left: 0;
+//         z-index: 0;
+//         opacity: 0; 
+//         color: $primary-color;
+//         transition: opacity 250ms;
+//     }
+// }
+
+
+// #full_heart {
+//     box-sizing: content-box;
+//     background-color: yellow;
+//     position: relative;
+//     z-index: 1;
+//     :hover {
+//         &.like--full {
+//             opacity: 1;
+//         }
+//     }
+// }
+//     .like--full {
+//         position: absolute;
+//         top: 0;
+//         right: 0;
+//         bottom: 0;
+//         left: 0;
+//         z-index: -1;
+//         opacity: 0; 
+//         color: $primary-color;
+//         transition: opacity 250ms;
+//     }
+// }
+
+
+
+
+// ********************************  FOOTER  ********************************
+footer {
+    background-color: $background-color-footer;
+    color: #fff;
+    padding: 20px 0 10px 20px;
+    .logo_title { 
+        font-family: $font-title;
+        font-size: 1.5em; 
+    }
+    i {
+        padding-right: 15px;
+    }
+    a {
+        color: #fff;
+    }
+}
+

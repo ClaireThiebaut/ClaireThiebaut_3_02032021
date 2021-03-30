@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/styles.css"/>
+        <link rel="stylesheet" href="css/style.css"/>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Shrikhand&display=swap" rel="stylesheet">
         <link rel="icon" type="image/png" sizes="16x16" href="images/logo/favicon.png">
@@ -36,52 +36,54 @@
 
             </section> <!--fermeture explore-->
 
-            <section class="function">
+            <section class="fct">
                 <h2>Fonctionnement</h2>
                 
-                <div class="function__item">
-                    <div class="function__item__number">1</div>
+                <div class="fct__select">
+                    <div class="fct__select__number">1</div>
 
-                    <div class="function__item__text">
+                    <div class="fct__select__text">
                         <p><i class="fas fa-mobile-alt"></i>Choisissez un restaurant</p>
                     </div>
                 </div>
 
-                <div class="function__item">
-                    <div class="function__item__number">2</div>
+                <div class="fct__select">
+                    <div class="fct__select__number">2</div>
 
-                    <div class="function__item__text">
+                    <div class="fct__select__text">
                         <p><i class="fas fa-list-ul"></i>Composez votre menu</p>
                     </div>
                 </div>
 
-                <div class="function__item">
-                    <div class="function__item__number">3</div>
+                <div class="fct__select">
+                    <div class="fct__select__number">3</div>
 
-                    <div class="function__item__text">
+                    <div class="fct__select__text">
                         <p><i class="fas fa-store"></i>Dégustez au restaurant</p>
                     </div>
                 </div>
             </section>
     
 
-            <section class="main">
+            <section class="restaurant">
                 <h2>Restaurants</h2>
 
-                <div class="main__item">
-                    <a href="html/palette_gout.html">
+                <div class="restaurant__select">
+                    <a href="pages_html/palette_gout.html">
                         <span>Nouveau</span>
                         <figure> 
                             <img src="images/restaurants/palette-gout-low.png" alt="La palette du goût">
                             <figcaption>
                                 
-                                <div class="main__item__name">
+                                <div class="restaurant__select__name">
                                     <h3>La palette du goût</h3>
                                     <p>Ménilmontant</p>
                                 </div>
                                 
-                                <div class="like"><i class="far fa-heart"></i>
-                                    <!--<div class="like--full"><i class="fas fa-heart"></i></div>-->
+                                <div class="like">
+                                    <div  id="full_heart"><i class="far fa-heart"></i></div>
+                                    <div class="empty_heart"><i class="fas fa-heart"></i></div>
+                                    <div class="cover"></div>
                                 </div>
                                     
                             </figcaption>
@@ -90,8 +92,8 @@
                     
                 </div>
 
-                <div class="main__item">
-                    <a href="html/note_enchantee.html">
+                <div class="restaurant__select">
+                    <a href="pages_html/note_enchantee.html">
                         <span>Nouveau</span>
                         <figure> 
                             <img src="images/restaurants/note-low.png" alt="La note enchantée">
@@ -104,8 +106,8 @@
                     
                 </div>
 
-                <div class="main__item">
-                    <a href="html/francaise.html">
+                <div class="restaurant__select">
+                    <a href="pages_html/francaise.html">
                         <figure> 
                             <img src="images/restaurants/francaise-low.png" alt="A la française">
                             <figcaption>
@@ -116,8 +118,8 @@
                     </a>
                 </div>
                 
-                <div class="main__item">
-                    <a href="html/delice.html">
+                <div class="restaurant__select">
+                    <a href="pages_html/delice.html">
                         <figure> 
                             <img src="images/restaurants/delice-sens-low.png" alt="Le délice des sens">
                             <figcaption>
@@ -141,7 +143,7 @@
 
                 <p>Mentions légales</p>
 
-                <p><a href="#">Contact</a></p>
+                <p><a href="contact@ohmyfood.com">Contact</a></p>
             </footer>
 
         </div> <!--fermeture block_page-->

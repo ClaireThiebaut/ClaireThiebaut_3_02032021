@@ -30,11 +30,6 @@ h4 {
   /*menu titre des resto avec coeur à liker - display: flex*/
   font-family: "shrikhand";
   font-size: 1.6em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
   padding-top: 20px;
 }
 
@@ -56,94 +51,9 @@ header {
 }
 
 header img {
-  width: 150px;
+  width: 300px;
 }
 
-footer {
-  background-color: #464444;
-  color: #fff;
-  padding: 20px 0 10px 20px;
-}
-
-footer .logo_title {
-  font-family: "shrikhand";
-  font-size: 1.5em;
-}
-
-i {
-  padding-right: 15px;
-}
-
-a {
-  color: #fff;
-}
-
-.btn {
-  width: 250px;
-  color: #ffff;
-  font-size: 1.1em;
-  font-weight: bold;
-  background-color: #9356DC;
-  -webkit-box-shadow: inset 20px 20px 50px #ff7ad9, 5px 5px 5px #ded9db;
-          box-shadow: inset 20px 20px 50px #ff7ad9, 5px 5px 5px #ded9db;
-  border-radius: 30px;
-  padding: 20px;
-  border: none;
-}
-
-.btn:hover {
-  background-color: #ae80e5;
-}
-
-.like {
-  background-color: red;
-  position: relative;
-  z-index: 1;
-}
-
-.like :hover::after {
-  opacity: 1;
-}
-
-.like::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  opacity: 0;
-  color: #9356DC;
-  -webkit-transition: opacity 250ms;
-  transition: opacity 250ms;
-}
-
-/* .like {
-    box-sizing: content-box;
-    background-color: yellow;
-    position: relative;
-    z-index: 1;
-    :hover {
-        &.like--full  {
-            opacity: 1;
-        }
-    }
-}
-    .like--full {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: -1;
-        opacity: 0; 
-        color: $primary-color;
-        transition: opacity 250ms;
-    }
-}
-*/
-/*-------------------------------- SECTION INTRO ----------------------------*/
 .intro {
   text-align: center;
   background-color: #edebeb;
@@ -169,18 +79,18 @@ a {
   padding-right: 15px;
 }
 
-.intro__res {
+.intro .intro__res {
   padding: 0 30px 30px 30px;
 }
 
-/*------------------------ SECTION FONCTIONNEMENT --------------------------*/
-.function {
+/*------------------------ P1 / SECTION FONCTIONNEMENT --------------------------*/
+.fct {
   margin: auto;
 }
 
 /* Contenu FONCTIONNEMENT :
-    1 selecteur <function__> appliqué pour les 3 étiquettes*/
-.function__item {
+    1 selecteur <fct__> appliqué pour les 3 étiquettes*/
+.fct__select {
   width: 90%;
   margin: auto;
   background-color: #edebeb;
@@ -194,16 +104,13 @@ a {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 15px;
-  /*@include tablet {
-            width: 70%;
-        }*/
 }
 
-.function__item:hover {
+.fct__select:hover {
   background-color: rgba(104, 50, 170, 0.1);
 }
 
-.function__item .function__item__number {
+.fct__select .fct__select__number {
   background-color: #9356DC;
   color: #ffff;
   border-radius: 100%;
@@ -212,18 +119,18 @@ a {
   left: -8px;
 }
 
-.function__item .function__item__text i {
+.fct__select .fct__select__text i {
   padding: 0 20px 0 20px;
   color: grey;
 }
 
-/*----------------------------------- SECTION 3 : MAIN -----------------------*/
-.main {
+/*-----------------------------------P1 // restaurant ---------------------------*/
+.restaurant {
   background-color: #edebeb;
   padding-bottom: 15px;
 }
 
-.main .main__item {
+.restaurant .restaurant__select {
   width: 90%;
   position: relative;
   margin: auto;
@@ -234,7 +141,7 @@ a {
   margin-bottom: 15px;
 }
 
-.main span {
+.restaurant span {
   background-color: #6ff5ee;
   color: #0d998b;
   padding: 5px 10px 5px 10px;
@@ -269,7 +176,7 @@ figcaption {
   padding: 8px;
 }
 
-figcaption .main__item__name {
+figcaption .restaurant__select__name {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -289,7 +196,18 @@ figcaption p {
   font-size: 0.8em;
 }
 
-/* style de l'icone coeur dans le partiel _like_btn.scss */
+#full_heart {
+  color: blue;
+}
+
+#full_heart:hover {
+  -webkit-transition: color 300ms 300ms,  -webkit-transform 400ms ease-in-out;
+  transition: color 300ms 300ms,  -webkit-transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out,  color 300ms 300ms;
+  transition: transform 400ms ease-in-out,  color 300ms 300ms,  -webkit-transform 400ms ease-in-out;
+  color: red;
+}
+
 .background img {
   width: 100%;
   -o-object-fit: cover;
@@ -304,7 +222,29 @@ figcaption p {
   border-radius: 40px 40px 0 0;
 }
 
-.dishes__content {
+.menu__like {
+  /*vérifier si fonctionne. ajouté quand code bloqué.
+    !!!!!! HTML modifié que sur PALETTE DU GOUT. Si fonctionne, modifer les 3 autres HTML */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.menu__like h4 {
+  width: 300px;
+}
+
+.menu__like i {
+  font-size: 1.5em;
+}
+
+.dish__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -321,21 +261,21 @@ figcaption p {
   padding-bottom: 30px;
 }
 
-.dishes__content .subtitle {
+.dish__content .subtitle {
   padding-bottom: 4px;
   border-bottom: solid #99e2d0 2px;
   margin: 20px;
 }
 
-.dishes__item {
+.dish__select {
   width: 300px;
   margin-bottom: 15px;
   background-color: #fff;
   border-radius: 15px 15px;
-  padding: 15px;
+  padding: 15px 15px 0 15px;
 }
 
-.dishes__item .price {
+.dish__select .price {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -344,16 +284,17 @@ figcaption p {
           justify-content: space-between;
 }
 
-.dishes__item p {
+.dish__select p {
   margin: 0;
 }
 
-/*.dishes__item {
-    @include tablet {
-        width: 450px;
-    }
-}*/
-.dishes__starters, .dishes__main, .dishes__deserts {
+#anim__selected {
+  position: relative;
+  right: -350px;
+  bottom: 20px;
+}
+
+.dish__starters, .dish__main, .dish__deserts {
   margin-bottom: 30px;
 }
 
@@ -361,4 +302,41 @@ figcaption p {
   -ms-grid-column-align: center;
       justify-self: center;
 }
-/*# sourceMappingURL=styles.css.map */
+
+/* style de l'icone coeur dans le partiel _like_btn.scss */
+.btn {
+  width: 250px;
+  color: #ffff;
+  font-size: 1.1em;
+  font-weight: bold;
+  background-color: #9356DC;
+  -webkit-box-shadow: inset 20px 20px 50px #ff7ad9, 5px 5px 5px #ded9db;
+          box-shadow: inset 20px 20px 50px #ff7ad9, 5px 5px 5px #ded9db;
+  border-radius: 30px;
+  padding: 20px;
+  border: none;
+}
+
+.btn:hover {
+  background-color: #ae80e5;
+}
+
+footer {
+  background-color: #464444;
+  color: #fff;
+  padding: 20px 0 10px 20px;
+}
+
+footer .logo_title {
+  font-family: "shrikhand";
+  font-size: 1.5em;
+}
+
+footer i {
+  padding-right: 15px;
+}
+
+footer a {
+  color: #fff;
+}
+/*# sourceMappingURL=main.css.map */
