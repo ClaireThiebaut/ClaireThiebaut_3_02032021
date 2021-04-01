@@ -3,7 +3,7 @@
 /* COULEURS */
 /*utilisé aussi pour box-shadow*/
 body {
-  width: 100%;
+  margin: auto;
   font-family: "roboto";
 }
 
@@ -36,15 +36,41 @@ h4 {
 h5 {
   /* menu titre des dishes__item*/
   margin: 0;
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: bold;
   padding-bottom: 3px;
 }
 
 p {
-  font-size: 1em;
+  font-size: 0.8em;
 }
 
+@keyframes check_rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+@keyframes slidein {
+  from {
+    margin-right: 100%;
+    width: 100%;
+  }
+  to {
+    margin-right: 80%;
+    width: 80%;
+  }
+}
+@keyframes border_radius {
+  0% {
+    border-radius: 20px;
+  }
+  2%, 100% {
+    border-radius: 0;
+  }
+}
 header {
   text-align: center;
   padding: 5px;
@@ -173,73 +199,86 @@ figcaption p {
 .background img {
   width: 100%;
   object-fit: cover;
-  position: absolute;
 }
 
 .menu {
   position: relative;
-  top: 180px;
+  margin: -40px 0 0 0;
   background-color: #edebeb;
-  border-radius: 40px 40px 0 0;
+  border-radius: 40px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .menu__like {
-  /*vérifier si fonctionne. ajouté quand code bloqué.
-  !!!!!! HTML modifié que sur PALETTE DU GOUT. Si fonctionne, modifer les 3 autres HTML */
   display: flex;
   justify-content: center;
   align-items: baseline;
 }
 .menu__like h4 {
-  width: 300px;
+  width: 270px;
 }
 .menu__like i {
   font-size: 1.5em;
 }
 
 .dish__content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  width: 270px;
   padding-bottom: 30px;
 }
-.dish__content .subtitle {
-  padding-bottom: 4px;
-  border-bottom: solid #99e2d0 2px;
-  margin: 20px;
+
+#underline {
+  width: 30px;
+  height: 4px;
+  background-color: #99e2d0;
+  margin-bottom: 15px;
 }
 
 .dish__select {
-  width: 300px;
-  margin-bottom: 15px;
+  position: relative;
+  z-index: 1;
   background-color: #fff;
-  border-radius: 15px 15px;
-  padding: 15px 15px 0 15px;
+  width: 100%;
+  height: 50px;
+  border-radius: 20px;
+  padding: 10px 15px;
+}
+.dish__select p {
+  margin: 0;
 }
 .dish__select .price {
   display: flex;
   justify-content: space-between;
 }
-.dish__select p {
-  margin: 0;
-}
 
-#anim__selected {
+.dish__select__check {
   position: relative;
-  right: -350px;
-  bottom: 20px;
+  left: 230px;
+  bottom: 70px;
+  z-index: 0;
+  width: 70px;
+  height: 70px;
+  background-color: #99e2d0;
+  border-radius: 0 20px 20px 0;
+}
+.dish__select__check i {
+  color: #fff;
+  padding: 30px 35px;
 }
 
-.dish__starters, .dish__main, .dish__deserts {
-  margin-bottom: 30px;
+.dish__select:hover {
+  animation: slidein 800ms, border_radius 20ms ease-in-out;
+  animation-fill-mode: both;
+}
+.dish__select:hover + .dish__select__check i {
+  animation: check_rotate 500ms 300ms;
 }
 
 .btn {
   justify-self: center;
 }
 
-/* style de l'icone coeur dans le partiel _like_btn.scss */
 .btn {
   width: 250px;
   color: #ffff;

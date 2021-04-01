@@ -1,5 +1,6 @@
 @import "./utils/variables";
 @import "./base/base";
+@import "./utils/keyframes";
 
 @mixin tablet {
     @media screen and (min-width: 426px) and (max-width: 768px) {
@@ -158,23 +159,24 @@ figcaption {
 .background img{
     width: 100%;
     object-fit: cover;
-    position: absolute;
 }
 
 .menu {
     position: relative;
-    top: 180px;
+    margin: -40px 0 0 0;
     background-color: $background-color-grey;
-    border-radius: 40px 40px 0 0;
+    border-radius: 40px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.menu__like { /*vérifier si fonctionne. ajouté quand code bloqué.
-    !!!!!! HTML modifié que sur PALETTE DU GOUT. Si fonctionne, modifer les 3 autres HTML */
+.menu__like {
     display: flex;
     justify-content: center;
     align-items: baseline;
     h4 {
-        width: 300px;
+        width: 270px;
     }
     i {
         font-size: 1.5em;
@@ -182,54 +184,68 @@ figcaption {
 }
 
 .dish__content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    width: 270px;
     padding-bottom: 30px;
-    .subtitle {
-        padding-bottom: 4px;
-        border-bottom: solid $tertiary-color 2px;
-        margin: 20px;
-    }
+}
+
+#underline {
+    width: 30px;
+    height: 4px;
+    background-color: $tertiary-color;
+    margin-bottom: 15px;
 }
 
 .dish__select {
-    width: 300px;
-    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
     background-color: #fff;
-    border-radius: 15px 15px;
-    padding: 15px 15px 0 15px;
-        // overflow: hidden;
+    width: 100%;
+    height: 50px;
+    border-radius: 20px;
+    padding: 10px 15px;
+    p {
+        margin: 0;
+    }
     .price {
         display: flex;
         justify-content: space-between;
     }
-    p {
-        margin: 0;
-    }
-} 
+}
 
-#anim__selected {
+.dish__select__check {
     position: relative;
-    right: -350px;
-    bottom: 20px;
+    left: 230px;
+    bottom: 70px;
+    z-index: 0;
+    width: 70px;
+    height: 70px;
+    background-color: $tertiary-color;
+    border-radius: 0 20px 20px 0;
+    i {
+        color: #fff;
+        padding: 30px 35px;
+    }
 }
 
-// .dish__item {
-//     @include tablet {
-//         width: 450px;
-//     }
+
+.dish__select { 
+        &:hover {
+           animation: slidein 800ms, border_radius 20ms ease-in-out;
+           animation-fill-mode: both;
+        }
+        &:hover + .dish__select__check i {
+            animation: check_rotate 500ms 300ms;
+        }
+    }
+
+
+// .dish__starters, .dish__main, .dish__deserts {
+//     margin-bottom: 30px;
 // }
-
-.dish__starters, .dish__main, .dish__deserts {
-    margin-bottom: 30px;
-}
 
 .btn {
     justify-self: center;
 }
-/* style de l'icone coeur dans le partiel _like_btn.scss */
 
 // ******************************** BTN *************************************
 .btn {
@@ -246,90 +262,6 @@ figcaption {
         background-color: lighten($primary-color, 10%);
     }
 }
-
-
-// #fullHeart {
-//     position: relative;
-//     right: 5%;
-//     top: 15px;
-//     font-size: 1.1em;
-//     background: linear-gradient($secondary-color, $primary-color);
-//     background-clip: text;
-//     color: transparent;
-// }
-// .emptyHeart {
-//     background-color: blue;
-//     position: relative;
-//     right: 5%;
-//     top: 15px;
-//     font-size: 1.1em;
-//     z-index: 2;
-//     &:hover +.stock {
-//         animation: filling 2s forwards;
-//     }
-//     &:hover {
-//         animation: colorChange 1s forwards;
-//     }
-// }
-// .stock {
-//     height: 20px;
-//     width: 20px;
-//     background-color: #fff;
-//     position: relative;
-//     right: 5%;
-//     top: 13px;
-//     z-index: 1;
-// }
-
-
-
-// .like {
-//     background-color: red;
-//     position: relative;
-//     z-index: 1;
-//     :hover {
-//         &::after  {
-//             opacity: 1;
-//     }
-// }
-//     &::after {
-//         content:"";
-//         position: absolute;
-//         top: 0;
-//         right: 0;
-//         bottom: 0;
-//         left: 0;
-//         z-index: 0;
-//         opacity: 0; 
-//         color: $primary-color;
-//         transition: opacity 250ms;
-//     }
-// }
-
-
-// #full_heart {
-//     box-sizing: content-box;
-//     background-color: yellow;
-//     position: relative;
-//     z-index: 1;
-//     :hover {
-//         &.like--full {
-//             opacity: 1;
-//         }
-//     }
-// }
-//     .like--full {
-//         position: absolute;
-//         top: 0;
-//         right: 0;
-//         bottom: 0;
-//         left: 0;
-//         z-index: -1;
-//         opacity: 0; 
-//         color: $primary-color;
-//         transition: opacity 250ms;
-//     }
-// }
 
 
 
