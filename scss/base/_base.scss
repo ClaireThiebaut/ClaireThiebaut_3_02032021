@@ -1,6 +1,11 @@
 body {
-    margin: auto;
+    margin: 0;
     font-family: $font-text;
+}
+
+#block-page {
+    width: 100%;
+    margin: auto;
 }
 
 a {
@@ -26,7 +31,7 @@ h2 { /* homepage titre FONCTIONNEMENT et RESTAURANTS */
 h4 { /*menu titre des resto avec coeur à liker - display: flex*/
     font-family: $font-title;
     font-size: 1.6em;
-    padding-top: 20px;
+    // padding-top: 20px;
 
 }
 

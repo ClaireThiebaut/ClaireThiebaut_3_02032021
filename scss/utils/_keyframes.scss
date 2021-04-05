@@ -1,39 +1,85 @@
-// // Keyframes première version
+// Page d'accueil
 
+// // ANIMATION Loading-spinner
 
+// DISAPPEAR : Disparition de la page loading-spinner avec opacity 
+// + mise en z-index négatif pour accéder aux choix des menus 
+// (si uniquement opacity à 0, 
+// page loading-spinner transparent empêche accès page accueil)
 
-// @keyframes check_appear {
-//     0% {
-//         transform: translate(0px);
-//         opacity: .0;
-//     }
-//     25%{
-//         transform: translate(-20px);
-//         opacity: .0;
-//     }
-//     50%,100% {
-//         opacity: 1;
-//     }
-//     50% {
-//         transform: translate(-40);
-//     }
-//     100% {
-//         transform: translate(-60px);
-        
-//     }
-// }
-
-@keyframes check_rotate {
-    from {
-        transform: rotate(0);
+@keyframes disappear {
+    0% {
+        opacity: 1;
+        z-index: 3;
     }
-    to {
-        transform: rotate(1turn)
+    80% {
+        opacity: .2;
+    }
+    100% {
+        opacity: 0;
+        z-index: -5;
     }
 }
 
 
-// // Keyframes deuxième version
+@keyframes heart_filling {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        color: black;
+    }
+    25% {
+        transform: scale(.8);
+        color: $secondary-color;
+    }
+    50% {
+        transform: scale(.5);
+    }
+    75% {
+        transform: scale(.4);
+        opacity: .5;
+    }
+    90% {
+        transform: scale(.2);
+        opacity: .2;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+
+// Page des menus
+
+// ANIMATION Apparition menu
+
+@keyframes appear {
+    0% { 
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    25% {    
+        transform: translateY(-30px);
+        opacity: .8;
+    
+    }
+    50% {
+        transform: translateY(-20px);
+        opacity: .9;
+    }
+    75% {
+        transform: tanslateY(-10px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+// DIV Check apparait
+
 @keyframes slidein {
     from {
         margin-right: 100%;
@@ -46,14 +92,47 @@
     }
 }
 
+// Angles arrondis redeviennent carrés
 @keyframes border_radius {
     0% {
-        border-radius: 20px;
+        border-radius: 15px;
     }
 
     2%,100% {
-        border-radius: 0;
+        border-radius: 15px 0 0 15px;
     }
 }
 
 
+// Icone Check rotate
+@keyframes check_rotate {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(1turn)
+    }
+}
+
+// @keyframes grow {
+//     0% {
+//         // transform: scale(0);
+//         opacity: .1;
+//     }
+//     25% {
+//         // transform: scale(.3);
+//         opacity: .3;
+//     }
+//     50% {
+//         // transform: scale(.5);
+//         opacity: .5;
+//     }
+//     75% {
+//         // transform: scale(.7);
+//         opacity: .8
+//     }
+//     100% {
+//         // transform: scale(1);
+//         opacity: 1;
+//     }
+// }

@@ -1,10 +1,14 @@
 @charset "UTF-8";
 /* POLICES */
 /* COULEURS */
-/*utilisé aussi pour box-shadow*/
 body {
-  margin: auto;
+  margin: 0;
   font-family: "roboto";
+}
+
+#block-page {
+  width: 100%;
+  margin: auto;
 }
 
 a {
@@ -30,7 +34,6 @@ h4 {
   /*menu titre des resto avec coeur à liker - display: flex*/
   font-family: "shrikhand";
   font-size: 1.6em;
-  padding-top: 20px;
 }
 
 h5 {
@@ -45,12 +48,65 @@ p {
   font-size: 0.8em;
 }
 
-@keyframes check_rotate {
-  from {
-    transform: rotate(0);
+@keyframes disappear {
+  0% {
+    opacity: 1;
+    z-index: 3;
   }
-  to {
-    transform: rotate(1turn);
+  80% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+    z-index: -5;
+  }
+}
+@keyframes heart_filling {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    color: black;
+  }
+  25% {
+    transform: scale(0.8);
+    color: #ff7ad9;
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  75% {
+    transform: scale(0.4);
+    opacity: 0.5;
+  }
+  90% {
+    transform: scale(0.2);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+@keyframes appear {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  25% {
+    transform: translateY(-30px);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-20px);
+    opacity: 0.9;
+  }
+  75% {
+    transform: tanslateY(-10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
   }
 }
 @keyframes slidein {
@@ -65,18 +121,56 @@ p {
 }
 @keyframes border_radius {
   0% {
-    border-radius: 20px;
+    border-radius: 15px;
   }
   2%, 100% {
-    border-radius: 0;
+    border-radius: 15px 0 0 15px;
   }
 }
+@keyframes check_rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+.main_content {
+  position: relative;
+  z-index: 0;
+}
+
+.loading_spinner {
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  font-size: 50px;
+  color: #99e2d0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: disappear 1000ms 3110ms ease-in-out forwards;
+}
+.loading_spinner i {
+  animation: check_rotate 1000ms 100ms ease-in-out;
+  animation-iteration-count: 3;
+}
+
 header {
   text-align: center;
   padding: 5px;
+  display: flex;
+  align-items: center;
 }
 header img {
-  width: 300px;
+  width: 200px;
+  margin: auto;
+}
+header i {
+  padding-left: 15px;
+  font-size: 1.5em;
 }
 
 .intro {
@@ -86,7 +180,7 @@ header img {
 }
 .intro .intro__loc {
   background-color: #ded9db;
-  /* box-shadow: inset; ombre à rajouter */
+  box-shadow: inset 3px 3px 5px #c9c8c8;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,7 +205,7 @@ header img {
   margin: auto;
   background-color: #edebeb;
   border-radius: 15px;
-  box-shadow: 3px 3px 5px #ded9db;
+  box-shadow: 3px 3px 5px #c9c8c8;
   display: flex;
   align-items: center;
   margin-bottom: 15px;
@@ -132,7 +226,7 @@ header img {
   color: grey;
 }
 
-/*-----------------------------------P1 // restaurant ---------------------------*/
+/*-----------------------------------P1 // restaurant__select ---------------------------*/
 .restaurant {
   background-color: #edebeb;
   padding-bottom: 15px;
@@ -188,12 +282,27 @@ figcaption p {
   font-size: 0.8em;
 }
 
-#full_heart {
-  color: blue;
+.like {
+  position: relative;
+  top: 10px;
+  right: 30px;
 }
-#full_heart:hover {
-  transition: transform 400ms ease-in-out, color 300ms 300ms;
-  color: red;
+.like .full_heart i {
+  position: absolute;
+  z-index: 10;
+  font-size: 1.2em;
+  color: #ff7ad9;
+}
+.like .empty_heart i {
+  color: black;
+  font-size: 1.2em;
+  background-color: #fff;
+  position: absolute;
+  z-index: 12;
+}
+
+.empty_heart i:hover {
+  animation: heart_filling 500ms ease-out forwards;
 }
 
 .background img {
@@ -201,31 +310,31 @@ figcaption p {
   object-fit: cover;
 }
 
-.menu {
+.menu__background {
   position: relative;
-  margin: -40px 0 0 0;
+  margin-top: -80px;
   background-color: #edebeb;
   border-radius: 40px 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
-.menu__like {
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
+.menu__descr {
+  margin: auto;
 }
-.menu__like h4 {
-  width: 270px;
+
+.restaurant__name {
+  margin: auto;
+  text-align: center;
 }
-.menu__like i {
+.restaurant__name h4 {
   font-size: 1.5em;
+  padding-top: 15px;
 }
 
 .dish__content {
-  width: 270px;
+  width: 300px;
   padding-bottom: 30px;
+  margin: auto;
+  /*permet de centrer les blocs menus */
 }
 
 #underline {
@@ -235,27 +344,51 @@ figcaption p {
   margin-bottom: 15px;
 }
 
+.dish__starters, .dish__main, .dish__deserts {
+  opacity: 0;
+}
+
+.dish__deserts {
+  animation: appear 600ms 100ms ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.dish__main {
+  animation: appear 600ms 500ms ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.dish__starters {
+  animation: appear 600ms 1000ms ease-in-out;
+  animation-fill-mode: forwards;
+}
+
 .dish__select {
+  position: relative;
+  margin: 15px;
+}
+
+.dish__select__text {
   position: relative;
   z-index: 1;
   background-color: #fff;
   width: 100%;
   height: 50px;
-  border-radius: 20px;
+  border-radius: 15px;
   padding: 10px 15px;
 }
-.dish__select p {
+.dish__select__text p {
   margin: 0;
 }
-.dish__select .price {
+.dish__select__text .price {
   display: flex;
   justify-content: space-between;
 }
 
 .dish__select__check {
-  position: relative;
+  position: absolute;
   left: 230px;
-  bottom: 70px;
+  bottom: 0px;
   z-index: 0;
   width: 70px;
   height: 70px;
@@ -267,11 +400,11 @@ figcaption p {
   padding: 30px 35px;
 }
 
-.dish__select:hover {
+.dish__select__text:hover {
   animation: slidein 800ms, border_radius 20ms ease-in-out;
-  animation-fill-mode: both;
+  animation-fill-mode: forwards;
 }
-.dish__select:hover + .dish__select__check i {
+.dish__select__text:hover + .dish__select__check i {
   animation: check_rotate 500ms 300ms;
 }
 
@@ -285,12 +418,12 @@ figcaption p {
   font-size: 1.1em;
   font-weight: bold;
   background-color: #9356DC;
-  box-shadow: inset 20px 20px 50px #ff7ad9, 5px 5px 5px #ded9db;
+  box-shadow: inset 20px 20px 50px #ff7ad9, 5px 5px 5px #c9c8c8;
   border-radius: 30px;
   padding: 20px;
   border: none;
 }
-.btn:hover {
+s .btn:hover {
   background-color: #ae80e5;
 }
 
