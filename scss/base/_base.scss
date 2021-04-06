@@ -13,12 +13,12 @@ a {
 }
 
 h1 { /* homepage titre RESERVEZ LE MENU QUI VOUS CONVIENT */
-    font-size: 1.5em;
+    font-size: $fontsize_h1;
     font-weight: bold;
 }
 
 h2 { /* homepage titre FONCTIONNEMENT et RESTAURANTS */
-    font-size: 1.5em;
+    font-size: $fontsize_h2;
     width: 90%;
     margin: auto;
     padding: 20px 0 20px 0;
@@ -30,18 +30,18 @@ h2 { /* homepage titre FONCTIONNEMENT et RESTAURANTS */
 
 h4 { /*menu titre des resto avec coeur à liker - display: flex*/
     font-family: $font-title;
-    font-size: 1.6em;
+    font-size: $fontsize_h4;
     // padding-top: 20px;
 
 }
 
 h5 { /* menu titre des dishes__item*/
     margin: 0;
-    font-size: 1em;
+    font-size: $fontsize_h5;
     font-weight: bold;
-    padding-bottom: 3px;
+    // padding-bottom: 3px;
 }
 
 p {
-    font-size: 0.8em;
+    font-size: $fontsize_p;
 }

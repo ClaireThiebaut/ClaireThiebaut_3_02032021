@@ -23,27 +23,11 @@
 
 
 @keyframes heart_filling {
-    0% {
+    from {
         transform: scale(1);
         opacity: 1;
-        color: black;
     }
-    25% {
-        transform: scale(.8);
-        color: $secondary-color;
-    }
-    50% {
-        transform: scale(.5);
-    }
-    75% {
-        transform: scale(.4);
-        opacity: .5;
-    }
-    90% {
-        transform: scale(.2);
-        opacity: .2;
-    }
-    100% {
+    to {
         transform: scale(0);
         opacity: 0;
     }
@@ -83,12 +67,12 @@
 @keyframes slidein {
     from {
         margin-right: 100%;
-        width: 100%;
+        width: 80%;
     }
 
     to {
         margin-right: 80%;
-        width: 80%;
+        width: 70%;
     }
 }
 
@@ -104,8 +88,8 @@
 }
 
 
-// Icone Check rotate
-@keyframes check_rotate {
+// Icone rotate (Check + knife&forch loading spinner)
+@keyframes rotate {
     from {
         transform: rotate(0);
     }
@@ -113,26 +97,3 @@
         transform: rotate(1turn)
     }
 }
-
-// @keyframes grow {
-//     0% {
-//         // transform: scale(0);
-//         opacity: .1;
-//     }
-//     25% {
-//         // transform: scale(.3);
-//         opacity: .3;
-//     }
-//     50% {
-//         // transform: scale(.5);
-//         opacity: .5;
-//     }
-//     75% {
-//         // transform: scale(.7);
-//         opacity: .8
-//     }
-//     100% {
-//         // transform: scale(1);
-//         opacity: 1;
-//     }
-// }
