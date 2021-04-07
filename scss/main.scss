@@ -3,22 +3,28 @@
 @import "./utils/keyframes";
 
 @mixin tablet {
-    @media screen and (min-width: 426px) and (max-width: 768px) {
+    @media screen and (min-width: 426px) and (max-width: 767px) {
         @content;
     }
 }
 
-@mixin laptop {
-    @media screen and (min-width: 769px) and (max-width: 1024px) { 
+@mixin laptop-size {
+    @media screen and (min-width: 768px) { 
         @content;
     }
 }
 
-@mixin large_laptop {
-    @media screen and (min-width: 1025px) { 
+@mixin large_laptop-size {
+    @media screen and (min-width: 1024px) { 
         @content;
     }
 }
+
+body {
+    margin: 0;
+    font-family: $font-text;
+}
+
 
 // ********************************************************************************
 // **************************************** LOADING SPINNER **********************************
@@ -93,6 +99,21 @@ header {
 /*------------------------ P1 / SECTION FONCTIONNEMENT --------------------------*/
 .fct {
     margin: auto;
+    @include laptop-size { 
+        width: 70%;
+        }
+    @include large_laptop-size {
+        width: 50%;
+    }
+    h2 {
+        @include laptop-size {
+            text-align: center;
+        }
+    }
+    @include large_laptop-size {
+        width: 30%;
+        margin: auto;
+    }
 }
     
     /* Contenu FONCTIONNEMENT :
@@ -149,6 +170,24 @@ header {
         background-color: #fff;
         border-radius: 15px;
         margin-bottom: 15px;
+        @include laptop-size {
+            width: 40%;
+        }
+        @include large_laptop-size {
+            width: 40%;
+        }
+    }
+}
+
+.laptop-size{
+    @include laptop-size {
+        display:flex;
+        justify-content: center;
+    }
+    @include large_laptop-size {
+        width: 50%;
+        margin: auto;
+        
     }
 }
 
@@ -373,12 +412,21 @@ footer {
     background-color: $background-color-footer;
     color: #fff;
     padding: 20px 0 10px 20px;
+    @include laptop-size {
+        text-align: center;
+    }
     .logo_title { 
         font-family: $font-title;
         font-size: 1.5em; 
     }
+    p {
+        @include laptop-size{
+            margin-top: 8px;;
+            margin-right: 25px;
+        }
+    }
     i {
-        padding-right: 15px;
+        padding-right: 10px;
     }
     a {
         color: #fff;

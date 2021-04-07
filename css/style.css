@@ -1,11 +1,6 @@
 @charset "UTF-8";
 /* POLICES */
 /* COULEURS */
-body {
-  margin: 0;
-  font-family: "roboto";
-}
-
 #block-page {
   width: 100%;
   margin: auto;
@@ -118,6 +113,11 @@ p {
     transform: rotate(1turn);
   }
 }
+body {
+  margin: 0;
+  font-family: "roboto";
+}
+
 .main_content {
   position: relative;
   z-index: 0;
@@ -162,6 +162,27 @@ header i {
 .fct {
   margin: auto;
 }
+@media screen and (min-width: 768px) {
+  .fct {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .fct {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .fct h2 {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .fct {
+    width: 30%;
+    margin: auto;
+  }
+}
 
 /* Contenu FONCTIONNEMENT :
 1 selecteur <fct__> appliqué pour les 3 étiquettes*/
@@ -205,6 +226,29 @@ header i {
   background-color: #fff;
   border-radius: 15px;
   margin-bottom: 15px;
+}
+@media screen and (min-width: 768px) {
+  .restaurant .restaurant__select {
+    width: 40%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .restaurant .restaurant__select {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .laptop-size {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .laptop-size {
+    width: 50%;
+    margin: auto;
+  }
 }
 
 .restaurant span {
@@ -387,12 +431,23 @@ footer {
   color: #fff;
   padding: 20px 0 10px 20px;
 }
+@media screen and (min-width: 768px) {
+  footer {
+    text-align: center;
+  }
+}
 footer .logo_title {
   font-family: "shrikhand";
   font-size: 1.5em;
 }
+@media screen and (min-width: 768px) {
+  footer p {
+    margin-top: 8px;
+    margin-right: 25px;
+  }
+}
 footer i {
-  padding-right: 15px;
+  padding-right: 10px;
 }
 footer a {
   color: #fff;
