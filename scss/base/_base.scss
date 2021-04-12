@@ -1,8 +1,22 @@
+// #block-page {
+//     width: 100%;
+// }
 
-
-#block-page {
-    width: 100%;
-    margin: auto;
+body { 
+    margin: 0;
+    position: relative;
+    font-family: $font-text;
+    @include laptop-size {
+        width: 70%;
+        margin: auto;
+    }
+    @include large-screen {
+        width: 50%;
+        margin: auto;
+    }
+    @include big-screen {
+        width: 50%;
+    }   margin: auto;
 }
 
 a {
@@ -19,11 +33,18 @@ h2 { /* homepage titre FONCTIONNEMENT et RESTAURANTS */
     width: 90%;
     margin: auto;
     padding: 20px 0 20px 0;
+    @include laptop-size {
+        text-align: center;
+    }
+    @include large-screen {
+        text-align: center;
+    }
+    @include big-screen {
+        text-align: center;
+    }
 }
 
-
 /*h3 : homepage: nestés dans figcaption */
-
 
 h4 { /*menu titre des resto avec coeur à liker - display: flex*/
     font-family: $font-title;
@@ -36,9 +57,15 @@ h5 { /* menu titre des dishes__item*/
     margin: 0;
     font-size: $fontsize_h5;
     font-weight: bold;
-    // padding-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 p {
     font-size: $fontsize_p;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

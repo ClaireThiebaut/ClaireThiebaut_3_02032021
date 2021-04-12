@@ -1,57 +1,37 @@
+@import "./utils/mixins";
 @import "./utils/variables";
 @import "./base/base";
 @import "./utils/keyframes";
 
-@mixin tablet {
-    @media screen and (min-width: 426px) and (max-width: 767px) {
-        @content;
-    }
-}
-
-@mixin laptop-size {
-    @media screen and (min-width: 768px) { 
-        @content;
-    }
-}
-
-@mixin large_laptop-size {
-    @media screen and (min-width: 1024px) { 
-        @content;
-    }
-}
-
-body {
-    margin: 0;
-    font-family: $font-text;
-}
 
 
 // ********************************************************************************
-// **************************************** LOADING SPINNER **********************************
+// **************************************** LOADING SPINNER ***********************
 // ********************************************************************************
 
 
-.main_content {
+.welcomepage {
     position: relative; 
     z-index: 0;
 }
-// .loading_spinner {
-//     position: absolute;
-//     z-index: 3;
-//     width: 100%;
-//     height: 100%;
-//     background-color: #fff;
-//     font-size: 50px;
-//     color: $tertiary-color;
-//     display: flex; 
-//     justify-content: center;
-//     align-items: center;
-//     animation: disappear 1000ms 3110ms ease-in-out forwards;
-//     i {
-//         animation: rotate 1000ms 100ms ease-in-out;
-//         animation-iteration-count: 3;  
-//     }
-// }
+.loading_spinner {
+    position: absolute;
+    z-index: 15;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $tertiary-color;
+    overflow: hidden;
+    animation: disappear 1000ms 3110ms ease-in-out forwards;
+    i {
+        animation: rotate 1000ms 100ms ease-in-out;
+        animation-iteration-count: 3;  
+    }
+}
 
 //// ********************************************************************************
 // **************************************** HEADER **********************************
@@ -81,14 +61,17 @@ header {
         box-shadow: inset 3px 3px 5px $boxshadow-color ;
         display: flex;
         justify-content: center;
-        align-items: center;
         font-size: 1em;
+        padding-top: 15px;
         }
         i {
             padding-right: 15px;
         }
     .intro__res {
         padding: 0 30px 30px 30px;
+    }
+    p {
+        padding-bottom: 20px; /*padding-bottom pour aérer le bouton*/
     }
 }
  
@@ -98,21 +81,16 @@ header {
 
 /*------------------------ P1 / SECTION FONCTIONNEMENT --------------------------*/
 .fct {
+    padding-bottom: 20px;
     margin: auto;
     @include laptop-size { 
         width: 70%;
-        }
-    @include large_laptop-size {
-        width: 50%;
     }
-    h2 {
-        @include laptop-size {
-            text-align: center;
-        }
+    @include large-screen {
+        width: 70%;
     }
-    @include large_laptop-size {
-        width: 30%;
-        margin: auto;
+    @include big-screen {
+        width: 700px;
     }
 }
     
@@ -121,16 +99,22 @@ header {
     
 .fct__select {
     width: 90%;
+    height: 50px;
     margin: auto;
     position: relative;
     background: $background-color-grey;
-    border-radius: 15px;
+    border-radius: $br-select;
     box-shadow: 3px 3px 5px $boxshadow-color;
     display: flex; 
     align-items: center;
-    margin-bottom: 15px;
-    &:hover {
-         background: rgba(104, 50, 170, 0.1);
+    margin-bottom: $margin-bottom-items;
+    @include big-screen {
+        width: 100%;
+    }
+    &:hover { 
+        &::after { 
+        opacity: .2;
+        }
     }
     .fct__select__number {
         background-color: $primary-color;
@@ -139,6 +123,7 @@ header {
         padding: 5px 8px 5px 8px;
         position: relative;
         left: -8px;
+        z-index: 3;
     }
     .fct__select__text i {
         padding: 0 20px 0 20px;
@@ -146,16 +131,18 @@ header {
     }
 }
 
-// .fct__select::after {
-//     content:"";
-//     position: absolute; 
-//     top: 0;
-//     right: 0;
-//     bottom: 0;
-//     left: 0;
-//     background: lighten($primar-color, 50);
-//     opacity: 0;
-// }
+.fct__select::after {
+    content:"";
+    position: absolute; 
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: $br-select;
+    background: lighten($primary-color,20);
+    opacity: 0;
+    z-index: 2;
+}
 
 /*-----------------------------------P1 // restaurant__select ---------------------------*/
 
@@ -168,26 +155,33 @@ header {
         margin: auto;
         box-sizing: border-box;
         background-color: #fff;
-        border-radius: 15px;
-        margin-bottom: 15px;
-        @include laptop-size {
-            width: 40%;
+        border-radius: $br-select;
+        margin-bottom: $margin-bottom-items;
+        @include large-screen {
+            max-width: 45%;
         }
-        @include large_laptop-size {
-            width: 40%;
+        @include big-screen {
+            max-width: 45%;
         }
     }
 }
 
-.laptop-size{
+.breakpoints_block {
     @include laptop-size {
-        display:flex;
-        justify-content: center;
-    }
-    @include large_laptop-size {
-        width: 50%;
+        width: 70%;
         margin: auto;
-        
+    }
+    @include large-screen {
+        width: 70%;
+        margin: auto;
+        display: flex; 
+        justify-content: space-between;
+    }
+    @include big-screen {
+        width: 70%;
+        margin: auto;
+        display: flex; 
+        justif-content: space-between; 
     }
 }
 
@@ -206,7 +200,7 @@ figure {
     margin: auto;
     img {
         width: 100%;
-        border-radius: 15px 15px 0 0;
+        border-radius: $br_restaurant-img;
         object-fit: cover;
     }
 }
@@ -234,13 +228,17 @@ figcaption {
     top: 10px;
     right: 30px;
     font-size: $fontsize_i;
-    .full_heart i {
+    .full_heart {
         position: absolute;
         z-index: 10;
-        color: $tertiary-color;
+        @include PinkPurple_background;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        color: transparent;
     }
     .empty_heart i {
-        color: $tertiary-color;
+        color: black;
         background-color: #fff;
         position: absolute; 
         z-index: 11;
@@ -252,7 +250,6 @@ figcaption {
     }
 }
 
-
 // ********************************************************************************
 // **************************************** MENU **********************************
 // ********************************************************************************
@@ -261,125 +258,172 @@ figcaption {
 .background img {
     width: 100%;
     object-fit: cover;
+    @include laptop-size {
+        height: 300px;
+    }
+    @include large-screen {
+        height: 450px;
+    }
+    @include big-screen {
+        height: 400px;
+    }
 }
 
 .menu__background {
     position: relative;
     margin-top: -80px;
+    padding-bottom: 30px; /*padding-bottom pour aérer le bouton*/
     background-color: $background-color-grey;
-    border-radius: 40px 40px;
+    border-radius: 40px 40px 0 0;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    background-color: $background-color-grey;
+    @include laptop-size {
+        margin-top: -50px;
+    }
+    @include big-screen {
+        margin-top: -70px;
+    }
 }
 
-.menu__descr {
-    width: 300px;
+.menu__content {
+    padding: 0 15px 30px 15px; /*padding-bottom pour aérer le bouton*/
+    width: 320px;
     margin: auto;
-}
+    @include laptop-size {
+    width: 400px;
+    }
+    @include large-screen {
+    width: 535px;
+    }
+    @include big-screen {
+    width: 800px; 
+        }
+    }
+
 
 .restaurant__name {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: space-evenly;
     align-items: baseline;
+    @include large-screen {
+        justify-content: space-evenly;
+    }
 }
 
-.dish__content {
-    padding-bottom: 30px;
-    // margin: auto; /*permet de centrer les blocs menus */
-}
-
-#underline {
+.underline {
     width: 30px;
     height: 4px;
     background-color: $tertiary-color;
     margin-bottom: 15px;
 }
 
-// .dish__starters, .dish__main, .dish__deserts {
-//     // opacity: 0; remettre opacity à 0 pour relancer l'animation
+.menu__block {
+    // width: 100%;
+    display: flex; 
+    flex-direction: column;
+    justify-content: first baseline;
+}
+
+// Animation apparition menu__block 1.2.3
+// .menu_block {
+//     opacity: 0;
 // }
 
-// Animation apparition blocs menus
-// .dish__deserts {
-//     animation: appear 600ms 100ms ease-in-out;
-//     animation-fill-mode: forwards; 
-// }
-// .dish__main {
-//     animation: appear 600ms 500ms ease-in-out;
-//     animation-fill-mode: forwards; 
-// }
-// .dish__starters {
+// .block_1 {
 //     animation: appear 600ms 1000ms ease-in-out;    
 //     animation-fill-mode: forwards; 
 // }
+// .block_2 {
+//     animation: appear 600ms 500ms ease-in-out;
+//     animation-fill-mode: forwards; 
+// }
+// .block_3 {
+//     animation: appear 600ms 100ms ease-in-out;
+//     animation-fill-mode: forwards;
+//     }
 
 // Contenu blocs menu 
-.dish__select {
+.menu__block__select {
     position: relative;
-    margin-bottom: 15px;
+    margin-bottom: $margin-bottom-items;
+    width: 100%;
 }
 
-.dish__select__text {
-    position: relative;
-    z-index: 1;
+.menu__select__text {
+    position: absolute;
+    z-index: 21;
+    width: 100%;
+    box-sizing: border-box;
     background-color: #fff;
-    height: 50px;
-    border-radius: 15px;
+    border-radius: $br-select;
     padding: 10px 15px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    p {
-        margin: 0;
-    }
-    .price {
+    transition: width $check-apparition-time;
+    .descr {
         display: flex;
         justify-content: space-between;
-        overflow: hidden;
+    }
+    .price {
+        @include price_font-style;
     }
 }
 
-.dish__select__check {
-    position: absolute;
-    left: 230px;
-    bottom: 0px;
-    z-index: 0;
-    width: 70px;
-    height: 70px;
+.menu__select__check {
+    position: relative;
+    z-index: 20;
+    height: 30px;
     background-color: $tertiary-color;
-    border-radius: 0 20px 20px 0;
+    border-radius: $br-select;
+    padding: 10px 15px;
     i {
         color: #fff;
-        padding: 30px 35px;
+        position: relative;
+        left: 270px;
+        top: 8px;
+        @include laptop-size {
+            left: 345px;
+        }
+        @include large-screen {
+            left: 470px;
+        }
+        @include big-screen {
+            left: 710px;
+        }
     }
 }
 
-.dish__select__text { 
-        &:hover {
-           animation: slidein 800ms, border_radius 20ms ease-in-out;
-           animation-fill-mode: forwards;
+.menu__block__select {
+    &:hover {
+        & .menu__select__text {
+            width: 100% - $check-width;
         }
-        &:hover + .dish__select__check i {
-            animation: rotate 500ms 300ms;
+        & .menu__select__check i {
+            @include check-rotate-timing;
         }
     }
+}
+
 
 // ********************************************************************************
 // **************************************** BTN **********************************
 // ********************************************************************************
 
 
-
-.btn {
+.btn { 
     width: 250px;
     height: 80px;
     position: relative;
     z-index: 1;
     color: #fff;
-    font-size: 1.1em;
+    font-size: $fontsize_btn;
     font-weight: bold;
-    background: radial-gradient(at top left, $secondary-color, $primary-color);
+    @include PinkPurple_background;
     box-shadow: 5px 5px 5px $boxshadow-color;      
-    border-radius: 30px;
+    border-radius: $br-btn;
     padding: 21px;
+    margin: auto;
     border: none;
     &:hover {
         &::after { 
@@ -389,9 +433,9 @@ figcaption {
     }
     &::after {
         content:"";
-        background: radial-gradient(at top left, lighten($secondary-color,5), lighten($primary-color,5));
+       @include light-PinkPurple_background;
         height: 80px;
-        border-radius: 30px;
+        border-radius: $br-btn;
         position: absolute;
         z-index: -1; 
         top: 0;
@@ -402,8 +446,6 @@ figcaption {
         }
     }
 
-
-
 // ********************************************************************************
 // **************************************** FOOTER ********************************
 // ********************************************************************************
@@ -411,18 +453,33 @@ figcaption {
 footer {
     background-color: $background-color-footer;
     color: #fff;
-    padding: 20px 0 10px 20px;
-    @include laptop-size {
-        text-align: center;
-    }
+    padding: 20px 20px 10px 20px;
     .logo_title { 
         font-family: $font-title;
         font-size: 1.5em; 
+        padding-bottom: 10px;
+        @include laptop-size {
+            text-align: center;
+        }
+        @include large-screen {
+            text-align: center;
+        }
+        @include big-screen {
+            text-align: center;
+        }
     }
-    p {
-        @include laptop-size{
-            margin-top: 8px;;
-            margin-right: 25px;
+    .laptop-size__footer {
+        @include laptop-size {
+            display: flex; 
+            justify-content: space-evenly;
+        }
+        @include large-screen {
+            display: flex; 
+            justify-content: space-evenly;
+        }
+        @include big-screen {
+            display: flex; 
+            justify-content: space-evenly;
         }
     }
     i {

@@ -2,11 +2,6 @@
 
 // // ANIMATION Loading-spinner
 
-// DISAPPEAR : Disparition de la page loading-spinner avec opacity 
-// + mise en z-index négatif pour accéder aux choix des menus 
-// (si uniquement opacity à 0, 
-// page loading-spinner transparent empêche accès page accueil)
-
 @keyframes disappear {
     0% {
         opacity: 1;
@@ -17,10 +12,9 @@
     }
     100% {
         opacity: 0;
-        z-index: -5;
+        z-index: -2;
     }
 }
-
 
 @keyframes heart_filling {
     from {
@@ -33,30 +27,16 @@
     }
 }
 
-
 // Page des menus
 
 // ANIMATION Apparition menu
 
 @keyframes appear {
-    0% { 
+   from { 
         transform: translateY(-50px);
         opacity: 0;
     }
-    25% {    
-        transform: translateY(-30px);
-        opacity: .8;
-    
-    }
-    50% {
-        transform: translateY(-20px);
-        opacity: .9;
-    }
-    75% {
-        transform: tanslateY(-10px);
-        opacity: 1;
-    }
-    100% {
+    to {
         transform: translateY(0px);
         opacity: 1;
     }

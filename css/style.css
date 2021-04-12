@@ -1,9 +1,26 @@
 @charset "UTF-8";
-/* POLICES */
-/* COULEURS */
-#block-page {
-  width: 100%;
+body {
+  margin: 0;
+  position: relative;
+  font-family: "roboto";
   margin: auto;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  body {
+    width: 70%;
+    margin: auto;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1600px) {
+  body {
+    width: 50%;
+    margin: auto;
+  }
+}
+@media screen and (min-width: 1601px) {
+  body {
+    width: 50%;
+  }
 }
 
 a {
@@ -23,6 +40,21 @@ h2 {
   margin: auto;
   padding: 20px 0 20px 0;
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  h2 {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1600px) {
+  h2 {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1601px) {
+  h2 {
+    text-align: center;
+  }
+}
 
 /*h3 : homepage: nestés dans figcaption */
 h4 {
@@ -36,10 +68,17 @@ h5 {
   margin: 0;
   font-size: 0.9em;
   font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 p {
   font-size: 0.8em;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @keyframes disappear {
@@ -52,7 +91,7 @@ p {
   }
   100% {
     opacity: 0;
-    z-index: -5;
+    z-index: -2;
   }
 }
 @keyframes heart_filling {
@@ -66,23 +105,11 @@ p {
   }
 }
 @keyframes appear {
-  0% {
+  from {
     transform: translateY(-50px);
     opacity: 0;
   }
-  25% {
-    transform: translateY(-30px);
-    opacity: 0.8;
-  }
-  50% {
-    transform: translateY(-20px);
-    opacity: 0.9;
-  }
-  75% {
-    transform: tanslateY(-10px);
-    opacity: 1;
-  }
-  100% {
+  to {
     transform: translateY(0px);
     opacity: 1;
   }
@@ -113,14 +140,28 @@ p {
     transform: rotate(1turn);
   }
 }
-body {
-  margin: 0;
-  font-family: "roboto";
-}
-
-.main_content {
+.welcomepage {
   position: relative;
   z-index: 0;
+}
+
+.loading_spinner {
+  position: absolute;
+  z-index: 15;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #99e2d0;
+  overflow: hidden;
+  animation: disappear 1000ms 3110ms ease-in-out forwards;
+}
+.loading_spinner i {
+  animation: rotate 1000ms 100ms ease-in-out;
+  animation-iteration-count: 3;
 }
 
 header {
@@ -148,8 +189,8 @@ header i {
   box-shadow: inset 3px 3px 5px #c9c8c8;
   display: flex;
   justify-content: center;
-  align-items: center;
   font-size: 1em;
+  padding-top: 15px;
 }
 .intro i {
   padding-right: 15px;
@@ -157,30 +198,29 @@ header i {
 .intro .intro__res {
   padding: 0 30px 30px 30px;
 }
+.intro p {
+  padding-bottom: 20px;
+  /*padding-bottom pour aérer le bouton*/
+}
 
 /*------------------------ P1 / SECTION FONCTIONNEMENT --------------------------*/
 .fct {
+  padding-bottom: 20px;
   margin: auto;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .fct {
     width: 70%;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) and (max-width: 1600px) {
   .fct {
-    width: 50%;
+    width: 70%;
   }
 }
-@media screen and (min-width: 768px) {
-  .fct h2 {
-    text-align: center;
-  }
-}
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1601px) {
   .fct {
-    width: 30%;
-    margin: auto;
+    width: 700px;
   }
 }
 
@@ -188,6 +228,7 @@ header i {
 1 selecteur <fct__> appliqué pour les 3 étiquettes*/
 .fct__select {
   width: 90%;
+  height: 50px;
   margin: auto;
   position: relative;
   background: #edebeb;
@@ -197,8 +238,13 @@ header i {
   align-items: center;
   margin-bottom: 15px;
 }
-.fct__select:hover {
-  background: rgba(104, 50, 170, 0.1);
+@media screen and (min-width: 1601px) {
+  .fct__select {
+    width: 100%;
+  }
+}
+.fct__select:hover::after {
+  opacity: 0.2;
 }
 .fct__select .fct__select__number {
   background-color: #9356DC;
@@ -207,10 +253,24 @@ header i {
   padding: 5px 8px 5px 8px;
   position: relative;
   left: -8px;
+  z-index: 3;
 }
 .fct__select .fct__select__text i {
   padding: 0 20px 0 20px;
   color: grey;
+}
+
+.fct__select::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 15px;
+  background: #c9abee;
+  opacity: 0;
+  z-index: 2;
 }
 
 /*-----------------------------------P1 // restaurant__select ---------------------------*/
@@ -227,27 +287,37 @@ header i {
   border-radius: 15px;
   margin-bottom: 15px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1025px) and (max-width: 1600px) {
   .restaurant .restaurant__select {
-    width: 40%;
+    max-width: 45%;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1601px) {
   .restaurant .restaurant__select {
-    width: 40%;
+    max-width: 45%;
   }
 }
 
-@media screen and (min-width: 768px) {
-  .laptop-size {
-    display: flex;
-    justify-content: center;
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .breakpoints_block {
+    width: 70%;
+    margin: auto;
   }
 }
-@media screen and (min-width: 1024px) {
-  .laptop-size {
-    width: 50%;
+@media screen and (min-width: 1025px) and (max-width: 1600px) {
+  .breakpoints_block {
+    width: 70%;
     margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 1601px) {
+  .breakpoints_block {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justif-content: space-between;
   }
 }
 
@@ -296,13 +366,17 @@ figcaption p {
   right: 30px;
   font-size: 1.2em;
 }
-.like .full_heart i {
+.like .full_heart {
   position: absolute;
   z-index: 10;
-  color: #99e2d0;
+  background: radial-gradient(at top left, #ff7ad9, #9356DC);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  color: transparent;
 }
 .like .empty_heart i {
-  color: #99e2d0;
+  color: black;
   background-color: #fff;
   position: absolute;
   z-index: 11;
@@ -316,82 +390,152 @@ figcaption p {
   width: 100%;
   object-fit: cover;
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .background img {
+    height: 300px;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1600px) {
+  .background img {
+    height: 450px;
+  }
+}
+@media screen and (min-width: 1601px) {
+  .background img {
+    height: 400px;
+  }
+}
 
 .menu__background {
   position: relative;
   margin-top: -80px;
+  padding-bottom: 30px;
+  /*padding-bottom pour aérer le bouton*/
   background-color: #edebeb;
-  border-radius: 40px 40px;
+  border-radius: 40px 40px 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #edebeb;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .menu__background {
+    margin-top: -50px;
+  }
+}
+@media screen and (min-width: 1601px) {
+  .menu__background {
+    margin-top: -70px;
+  }
 }
 
-.menu__descr {
-  width: 300px;
+.menu__content {
+  padding: 0 15px 30px 15px;
+  /*padding-bottom pour aérer le bouton*/
+  width: 320px;
   margin: auto;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .menu__content {
+    width: 400px;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1600px) {
+  .menu__content {
+    width: 535px;
+  }
+}
+@media screen and (min-width: 1601px) {
+  .menu__content {
+    width: 800px;
+  }
 }
 
 .restaurant__name {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-evenly;
   align-items: baseline;
 }
-
-.dish__content {
-  padding-bottom: 30px;
+@media screen and (min-width: 1025px) and (max-width: 1600px) {
+  .restaurant__name {
+    justify-content: space-evenly;
+  }
 }
 
-#underline {
+.underline {
   width: 30px;
   height: 4px;
   background-color: #99e2d0;
   margin-bottom: 15px;
 }
 
-.dish__select {
+.menu__block {
+  display: flex;
+  flex-direction: column;
+  justify-content: first baseline;
+}
+
+.menu__block__select {
   position: relative;
   margin-bottom: 15px;
+  width: 100%;
 }
 
-.dish__select__text {
-  position: relative;
-  z-index: 1;
+.menu__select__text {
+  position: absolute;
+  z-index: 21;
+  width: 100%;
+  box-sizing: border-box;
   background-color: #fff;
-  height: 50px;
   border-radius: 15px;
   padding: 10px 15px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  transition: width 800ms;
 }
-.dish__select__text p {
-  margin: 0;
-}
-.dish__select__text .price {
+.menu__select__text .descr {
   display: flex;
   justify-content: space-between;
-  overflow: hidden;
+}
+.menu__select__text .price {
+  font-size: 0.8em;
+  font-weight: bold;
 }
 
-.dish__select__check {
-  position: absolute;
-  left: 230px;
-  bottom: 0px;
-  z-index: 0;
-  width: 70px;
-  height: 70px;
+.menu__select__check {
+  position: relative;
+  z-index: 20;
+  height: 30px;
   background-color: #99e2d0;
-  border-radius: 0 20px 20px 0;
+  border-radius: 15px;
+  padding: 10px 15px;
 }
-.dish__select__check i {
+.menu__select__check i {
   color: #fff;
-  padding: 30px 35px;
+  position: relative;
+  left: 270px;
+  top: 8px;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .menu__select__check i {
+    left: 345px;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1600px) {
+  .menu__select__check i {
+    left: 470px;
+  }
+}
+@media screen and (min-width: 1601px) {
+  .menu__select__check i {
+    left: 710px;
+  }
 }
 
-.dish__select__text:hover {
-  animation: slidein 800ms, border_radius 20ms ease-in-out;
-  animation-fill-mode: forwards;
+.menu__block__select:hover .menu__select__text {
+  width: 85%;
 }
-.dish__select__text:hover + .dish__select__check i {
-  animation: rotate 500ms 300ms;
+.menu__block__select:hover .menu__select__check i {
+  animation: rotate 700ms 300ms;
 }
 
 .btn {
@@ -400,12 +544,13 @@ figcaption p {
   position: relative;
   z-index: 1;
   color: #fff;
-  font-size: 1.1em;
+  font-size: 1em;
   font-weight: bold;
   background: radial-gradient(at top left, #ff7ad9, #9356DC);
   box-shadow: 5px 5px 5px #c9c8c8;
   border-radius: 30px;
   padding: 21px;
+  margin: auto;
   border: none;
 }
 .btn:hover::after {
@@ -429,21 +574,44 @@ figcaption p {
 footer {
   background-color: #464444;
   color: #fff;
-  padding: 20px 0 10px 20px;
-}
-@media screen and (min-width: 768px) {
-  footer {
-    text-align: center;
-  }
+  padding: 20px 20px 10px 20px;
 }
 footer .logo_title {
   font-family: "shrikhand";
   font-size: 1.5em;
+  padding-bottom: 10px;
 }
-@media screen and (min-width: 768px) {
-  footer p {
-    margin-top: 8px;
-    margin-right: 25px;
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  footer .logo_title {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1600px) {
+  footer .logo_title {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1601px) {
+  footer .logo_title {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  footer .laptop-size__footer {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1600px) {
+  footer .laptop-size__footer {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+@media screen and (min-width: 1601px) {
+  footer .laptop-size__footer {
+    display: flex;
+    justify-content: space-evenly;
   }
 }
 footer i {

@@ -1,7 +1,6 @@
-/* POLICES */
+// POLICES 
 $font-text: 'roboto';
 $font-title: 'shrikhand';
-
 
 // FONTSIZES
 $fontsize_h1: 1.2em;
@@ -11,8 +10,9 @@ $fontsize_h4: 1.2em;
 $fontsize_h5: 0.9em;
 $fontsize_p: 0.8em;
 $fontsize_i: 1.2em;
+$fontsize_btn: 1em;
 
-/* COULEURS */
+// COULEURS 
 $primary-color: #9356DC;
 $secondary-color: #ff7ad9;
 $tertiary-color: #99e2d0;
@@ -23,3 +23,21 @@ $background-color-new: #6ff5ee;
 $boxshadow-color: #c9c8c8;
 
 $font-color-new:#0d998b;
+
+
+// BORDER-RADIUS 
+$br_select: 15px;
+$br_restaurant-img: 15px 15px 0 0;
+$br_bg_menu: 40px 40px;
+$br_btn: 30px;
+
+// MARGIN 
+$margin-bottom-items: 15px;
+$margin-top-btn: 15px;
+
+
+
+// CHECK TRANSITION
+$check-apparition-time: 800ms;
+
+$check-width: 15%;
