@@ -472,6 +472,25 @@ figcaption p {
   justify-content: first baseline;
 }
 
+.menu__block {
+  opacity: 0;
+}
+
+.block-1 {
+  animation: appear 600ms 1000ms ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.block-2 {
+  animation: appear 600ms 500ms ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.block-3 {
+  animation: appear 600ms 100ms ease-in-out;
+  animation-fill-mode: forwards;
+}
+
 .menu__block__select {
   position: relative;
   margin-bottom: 15px;

@@ -325,23 +325,23 @@ figcaption {
     justify-content: first baseline;
 }
 
-// Animation apparition menu__block 1.2.3
-// .menu_block {
-//     opacity: 0;
-// }
+// Animation apparition menu__block 1.2.3 
+.menu__block {
+    opacity: 0;
+}
 
-// .block_1 {
-//     animation: appear 600ms 1000ms ease-in-out;    
-//     animation-fill-mode: forwards; 
-// }
-// .block_2 {
-//     animation: appear 600ms 500ms ease-in-out;
-//     animation-fill-mode: forwards; 
-// }
-// .block_3 {
-//     animation: appear 600ms 100ms ease-in-out;
-//     animation-fill-mode: forwards;
-//     }
+.block-1 {
+    animation: appear 600ms 1000ms ease-in-out;    
+    animation-fill-mode: forwards; 
+}
+.block-2 {
+    animation: appear 600ms 500ms ease-in-out;
+    animation-fill-mode: forwards; 
+}
+.block-3 {
+    animation: appear 600ms 100ms ease-in-out;
+    animation-fill-mode: forwards;
+}
 
 // Contenu blocs menu 
 .menu__block__select {

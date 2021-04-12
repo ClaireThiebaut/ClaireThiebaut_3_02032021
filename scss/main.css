@@ -656,6 +656,31 @@ figcaption p {
           justify-content: first baseline;
 }
 
+.menu__block {
+  opacity: 0;
+}
+
+.block-1 {
+  -webkit-animation: appear 600ms 1000ms ease-in-out;
+          animation: appear 600ms 1000ms ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.block-2 {
+  -webkit-animation: appear 600ms 500ms ease-in-out;
+          animation: appear 600ms 500ms ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.block-3 {
+  -webkit-animation: appear 600ms 100ms ease-in-out;
+          animation: appear 600ms 100ms ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
 .menu__block__select {
   position: relative;
   margin-bottom: 15px;
