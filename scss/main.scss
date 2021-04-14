@@ -3,31 +3,39 @@
 @import "./base/base";
 @import "./utils/keyframes";
 
-
-
 // ********************************************************************************
 // **************************************** LOADING SPINNER ***********************
 // ********************************************************************************
 
-
-.loading_spinner {
-    position: absolute;
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
-    z-index: 15;
+.loading_spinner { 
     width: 100%;
     height: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 15;
     background-color: #fff;
     opacity: .9;
-    font-size: 50px;
-    overflow: hidden;
-    animation: disappear 200ms 3110ms ease-in-out forwards;
+    animation: disappear 200ms 2700ms ease-in-out forwards; 
     i {
+        font-size: 50px;    
         color: $tertiary-color;
-        animation: rotate 1000ms 100ms ease-in-out;
+        animation: rotate 800ms 100ms ease-in-out;
         animation-iteration-count: 3;  
     }
+    @include laptop-size {
+        width: 70%;
+        margin: auto;
+    }
+    @include large-screen {
+        width: 50%;
+        margin: auto;
+    }
+    @include big-screen {
+        width: 50%;
+        margin: auto;
+    }  
 }
 
 //// ********************************************************************************
@@ -49,13 +57,19 @@ header {
     }
 }
 
+// ********************************************************************************
+// ********************************** PAGE ACCUEIL ********************************
+// ********************************************************************************
+
+/*------------------------------------ INTRO -------------------------------------*/
+
 .intro {
     text-align: center;
     background-color: $background-color-grey; 
     font-family: $font-text;
     .intro__loc {
         background-color: $background-color-loc;
-        box-shadow: inset 3px 3px 5px $boxshadow-color ;
+        box-shadow: inset 3px 3px 5px $boxshadow-color;
         display: flex;
         justify-content: center;
         font-size: 1em;
@@ -72,11 +86,8 @@ header {
     }
 }
  
-// ********************************************************************************
-// ********************************** PAGE ACCUEIL ********************************
-// ********************************************************************************
 
-/*------------------------ P1 / SECTION FONCTIONNEMENT --------------------------*/
+/*----------------------------------- FONCTIONNEMENT ----------------------------*/
 .fct {
     padding-bottom: 20px;
     margin: auto;
@@ -90,9 +101,6 @@ header {
         width: 700px;
     }
 }
-    
-    /* Contenu FONCTIONNEMENT :
-    1 selecteur <fct__> appliqué pour les 3 étiquettes*/
     
 .fct__select {
     width: 90%;
@@ -141,7 +149,7 @@ header {
     z-index: 2;
 }
 
-/*-----------------------------------P1 // restaurant__select ---------------------------*/
+/*---------------------------------- RESTAURANTS  ---------------------------*/
 
 .restaurant {
     background-color: $background-color-grey;
@@ -178,7 +186,7 @@ header {
         width: 70%;
         margin: auto;
         display: flex; 
-        justif-content: space-between; 
+        justify-content: space-between; 
     }
 }
 
@@ -187,7 +195,7 @@ header {
     color: $font-color-new;
     padding: 5px 10px 5px 10px;
     z-index: 1;
-    display: inline block;
+    display: inline-block;
     position: absolute;
     right: 20px;
     top: 15px;
@@ -220,10 +228,10 @@ figcaption {
         font-size: $fontsize_p;
     }
 }
+
+// Animation coeur /
 .like {
     position: relative;
-    // top: 10px;
-    // right: 30px;
     font-size: $fontsize_i;
     .full_heart {
         position: absolute;
@@ -252,7 +260,6 @@ figcaption {
 // **************************************** MENU **********************************
 // ********************************************************************************
 
-
 .background img {
     width: 100%;
     object-fit: cover;
@@ -268,15 +275,14 @@ figcaption {
 }
 
 .menu__background {
+    background-color: $background-color-grey;
     position: relative;
     margin-top: -80px;
     padding-bottom: 30px; /*padding-bottom pour aérer le bouton*/
-    background-color: $background-color-grey;
     border-radius: 40px 40px 0 0;
     display: flex; 
     flex-direction: column;
     justify-content: center;
-    background-color: $background-color-grey;
     @include laptop-size {
         margin-top: -50px;
     }
@@ -297,32 +303,27 @@ figcaption {
     }
     @include big-screen {
     width: 800px; 
-        }
     }
-
+}
 
 .restaurant__name {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: baseline;
-    @include large-screen {
-        justify-content: space-evenly;
-    }
 }
 
 .underline {
     width: 30px;
     height: 4px;
     background-color: $tertiary-color;
-    margin-bottom: 15px;
+    margin: 2px 0 15px 0;
 }
 
 .menu__block {
-    // width: 100%;
     display: flex; 
     flex-direction: column;
-    justify-content: first baseline;
+    justify-content: baseline;
 }
 
 // Animation apparition menu__block 1.2.3 
@@ -343,11 +344,10 @@ figcaption {
     animation-fill-mode: forwards;
 }
 
-// Contenu blocs menu 
+// Contenu menu__blocks 
 .menu__block__select {
     position: relative;
     margin-bottom: $margin-bottom-items;
-    // width: 100%;
 }
 
 .menu__select__text {
@@ -404,11 +404,9 @@ figcaption {
     }
 }
 
-
 // ********************************************************************************
 // **************************************** BTN **********************************
 // ********************************************************************************
-
 
 .btn { 
     width: 250px;
@@ -427,12 +425,12 @@ figcaption {
     &:hover {
         &::after { 
         opacity: .7;
-        box-shadow: 10px 10px 5px, $boxshadow-color; 
+        box-shadow: 10px 10px 5px $boxshadow-color; 
         }
     }
     &::after {
         content:"";
-       @include light-PinkPurple_background;
+        @include light-PinkPurple_background;
         height: 80px;
         border-radius: $br-btn;
         position: absolute;
@@ -456,17 +454,15 @@ footer {
     .logo__title { 
         font-family: $font-title;
         font-size: 1.5em; 
-        padding-bottom: 10px;
-        .footer_menu { 
-            @include laptop-size {
-                text-align: center;
-            }
-            @include large-screen {
-                text-align: center;
-            }
-            @include big-screen {
-                text-align: center;
-            }
+        padding-bottom: 10px; 
+        @include laptop-size {
+            text-align: center;
+        }
+        @include large-screen {
+            text-align: center;
+        }
+        @include big-screen {
+            text-align: center;
         }
     }
 
