@@ -24,6 +24,9 @@ $boxshadow-color: #c9c8c8;
 
 $font-color-new:#0d998b;
 
+$PinkPurple_background : radial-gradient(at top left, $secondary-color, $primary-color);
+
+$light-PinkPurple_background: radial-gradient(at top left, lighten($secondary-color,5), lighten($primary-color,5));
 
 // BORDER-RADIUS 
 $br_select: 15px;
@@ -34,8 +37,6 @@ $br_btn: 30px;
 // MARGIN 
 $margin-bottom-items: 15px;
 $margin-top-btn: 15px;
-
-
 
 // CHECK TRANSITION
 $check-apparition-time: 800ms;

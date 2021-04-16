@@ -23,6 +23,19 @@
     }
 }
 
+// HOVER and CLIC
+
+@mixin clic {
+    @media screen and (max-width: 1024px) { 
+        @content;
+    }
+}
+
+@mixin hover {
+    @media screen and (min-width: 1025px) {
+        @content;
+    }
+}
 
 // FONT-STYLE
 @mixin price_font-style {
@@ -35,16 +48,8 @@
     margin-left: 70px;
 }
 
-@mixin PinkPurple_background {
-    background: radial-gradient(at top left, $secondary-color, $primary-color);
-}
-
-@mixin light-PinkPurple_background { 
-    background : radial-gradient(at top left, lighten($secondary-color,5), lighten($primary-color,5));
-}
 
 //ANIMATIONS
-
 @mixin check-rotate-timing {
     animation: rotate 700ms 300ms;
 }

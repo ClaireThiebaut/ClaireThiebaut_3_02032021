@@ -25,6 +25,7 @@ body {
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 h1 {
@@ -257,8 +258,15 @@ header i {
     width: 100%;
   }
 }
-.fct__select:hover::after {
-  opacity: 0.2;
+@media screen and (max-width: 1024px) {
+  .fct__select:active::after {
+    opacity: 0.2;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .fct__select:hover::after {
+    opacity: 0.2;
+  }
 }
 .fct__select .fct__select__number {
   background-color: #9356DC;
@@ -381,7 +389,7 @@ figcaption p {
 .like .full_heart {
   position: absolute;
   z-index: 10;
-  background: radial-gradient(at top left, #ff7ad9, #9356DC);
+  background-image: radial-gradient(at top left, #ff7ad9, #9356DC);
   background-clip: text;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -394,8 +402,16 @@ figcaption p {
   z-index: 11;
 }
 
-.empty_heart i:hover {
-  animation: heart_filling 500ms ease-out forwards;
+@media screen and (max-width: 1024px) {
+  .empty_heart i:active {
+    animation: heart_filling 500ms ease-out forwards;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .empty_heart i:hover {
+    animation: heart_filling 500ms ease-out forwards;
+  }
 }
 
 .background img {
@@ -479,7 +495,7 @@ figcaption p {
 .menu__block {
   display: flex;
   flex-direction: column;
-  justify-content: baseline;
+  justify-content: start;
 }
 
 .menu__block {
@@ -558,11 +574,25 @@ figcaption p {
 .menu__block__select {
   cursor: pointer;
 }
-.menu__block__select:hover .menu__select__text {
-  width: 85%;
+@media screen and (max-width: 1024px) {
+  .menu__block__select:active .menu__select__text {
+    width: 85%;
+  }
+  .menu__block__select:active .menu__select__check i {
+    animation: rotate 700ms 300ms;
+  }
 }
-.menu__block__select:hover .menu__select__check i {
-  animation: rotate 700ms 300ms;
+
+.menu__block__select {
+  cursor: pointer;
+}
+@media screen and (min-width: 1025px) {
+  .menu__block__select:hover .menu__select__text {
+    width: 85%;
+  }
+  .menu__block__select:hover .menu__select__check i {
+    animation: rotate 700ms 300ms;
+  }
 }
 
 .btn {
@@ -573,7 +603,7 @@ figcaption p {
   color: #fff;
   font-size: 1em;
   font-weight: bold;
-  background: radial-gradient(at top left, #ff7ad9, #9356DC);
+  background-image: radial-gradient(at top left, #ff7ad9, #9356DC);
   box-shadow: 5px 5px 5px #c9c8c8;
   border-radius: 30px;
   padding: 21px;
@@ -586,7 +616,7 @@ figcaption p {
 }
 .btn::after {
   content: "";
-  background: radial-gradient(at top left, #ff94e0, #a16be0);
+  background-image: radial-gradient(at top left, #ff94e0, #a16be0);
   height: 80px;
   border-radius: 30px;
   position: absolute;

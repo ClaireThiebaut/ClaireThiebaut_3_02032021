@@ -86,7 +86,6 @@ header {
     }
 }
  
-
 /*----------------------------------- FONCTIONNEMENT ----------------------------*/
 .fct {
     padding-bottom: 20px;
@@ -116,9 +115,18 @@ header {
     @include big-screen {
         width: 100%;
     }
-    &:hover { 
-        &::after { 
-        opacity: .2;
+    @include clic {
+        &:active { 
+            &::after { 
+            opacity: .2;
+            }
+        }
+    }
+    @include hover { 
+        &:hover { 
+            &::after { 
+            opacity: .2;
+            }
         }
     }
     .fct__select__number {
@@ -236,7 +244,7 @@ figcaption {
     .full_heart {
         position: absolute;
         z-index: 10;
-        @include PinkPurple_background;
+        background-image:$PinkPurple_background;
         background-clip: text;
         -webkit-background-clip: text;
         -moz-background-clip: text;
@@ -251,8 +259,18 @@ figcaption {
 }
 
 .empty_heart i { 
-    &:hover {
-        animation: heart_filling 500ms ease-out forwards;
+    @include clic { 
+        &:active {
+            animation: heart_filling 500ms ease-out forwards;
+        }
+    }
+}
+
+.empty_heart i { 
+    @include hover {
+        &:hover {
+            animation: heart_filling 500ms ease-out forwards;
+        }
     }
 }
 
@@ -323,7 +341,7 @@ figcaption {
 .menu__block {
     display: flex; 
     flex-direction: column;
-    justify-content: baseline;
+    justify-content: start;
 }
 
 // Animation apparition menu__block 1.2.3 
@@ -394,15 +412,32 @@ figcaption {
 
 .menu__block__select {
     cursor: pointer;
-    &:hover {
-        & .menu__select__text {
-            width: 100% - $check-width;
-        }
-        & .menu__select__check i {
-            @include check-rotate-timing;
+    @include clic { 
+        &:active {
+            & .menu__select__text {
+                width: 100% - $check-width;
+            }
+            & .menu__select__check i {
+                @include check-rotate-timing;
+            }
         }
     }
 }
+
+.menu__block__select {
+    cursor: pointer;
+    @include hover { 
+        &:hover {
+            & .menu__select__text {
+                width: 100% - $check-width;
+            }
+            & .menu__select__check i {
+                @include check-rotate-timing;
+            }
+        }
+    }
+}
+
 
 // ********************************************************************************
 // **************************************** BTN **********************************
@@ -416,7 +451,7 @@ figcaption {
     color: #fff;
     font-size: $fontsize_btn;
     font-weight: bold;
-    @include PinkPurple_background;
+    background-image: $PinkPurple_background;
     box-shadow: 5px 5px 5px $boxshadow-color;      
     border-radius: $br-btn;
     padding: 21px;
@@ -424,13 +459,13 @@ figcaption {
     border: none;
     &:hover {
         &::after { 
-        opacity: .7;
+         opacity: .7;
         box-shadow: 10px 10px 5px $boxshadow-color; 
         }
     }
     &::after {
         content:"";
-        @include light-PinkPurple_background;
+        background-image: $light-PinkPurple_background;
         height: 80px;
         border-radius: $br-btn;
         position: absolute;
