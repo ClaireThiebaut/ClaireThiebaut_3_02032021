@@ -188,6 +188,7 @@ header i {
 .intro p {
   padding-bottom: 20px;
   /*padding-bottom pour aérer le bouton*/
+  color: #474646;
 }
 
 /*----------------------------------- FONCTIONNEMENT ----------------------------*/
@@ -242,6 +243,7 @@ header i {
   display: flex;
   align-items: center;
   margin-bottom: 15px;
+  font-weight: bold;
 }
 @media screen and (min-width: 1601px) {
   .fct__select {

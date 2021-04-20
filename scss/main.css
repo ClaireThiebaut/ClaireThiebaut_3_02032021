@@ -302,6 +302,7 @@ header i {
 .intro p {
   padding-bottom: 20px;
   /*padding-bottom pour aérer le bouton*/
+  color: #474646;
 }
 
 /*----------------------------------- FONCTIONNEMENT ----------------------------*/
@@ -368,6 +369,7 @@ header i {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 15px;
+  font-weight: bold;
 }
 
 @media screen and (min-width: 1601px) {

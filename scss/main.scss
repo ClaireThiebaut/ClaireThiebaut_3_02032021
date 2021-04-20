@@ -87,6 +87,7 @@ header {
     }
     p {
         padding-bottom: 20px; /*padding-bottom pour aérer le bouton*/
+        color: rgb(71, 70, 70);
     }
 }
  
@@ -130,6 +131,7 @@ header {
     display: flex; 
     align-items: center;
     margin-bottom: $margin-bottom-items;
+    font-weight: bold;
     @include big-screen {
         width: 100%;
     }
