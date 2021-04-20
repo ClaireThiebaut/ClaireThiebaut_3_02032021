@@ -179,10 +179,11 @@ header i {
   padding-right: 15px;
 }
 .intro .intro__res {
+  display: inline-block;
   max-width: 220px;
   margin: auto;
   text-align: center;
-  overflow-wrap: wrap;
+  overflow: wrap;
   padding: 0 30px 30px 30px;
 }
 .intro p {
@@ -703,7 +704,7 @@ figcaption p {
   position: relative;
   z-index: 1;
   color: #fff;
-  font-size: 1ems;
+  font-size: 1em;
   font-weight: bold;
   background-image: radial-gradient(at top left, #ff7ad9, #9356DC);
   box-shadow: 5px 5px 5px #c9c8c8;
