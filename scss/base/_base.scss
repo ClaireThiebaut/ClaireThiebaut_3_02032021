@@ -27,42 +27,16 @@ h1 { /* homepage titre RESERVEZ LE MENU QUI VOUS CONVIENT */
 
 h2 { /* homepage titre FONCTIONNEMENT et RESTAURANTS */
     font-size: $fontsize_h2;
-    width: 90%;
-    margin: auto;
-    padding: 20px 0 20px 0;
-    @include laptop-size {
-        text-align: center;
-    }
-    @include large-screen {
-        text-align: center;
-    }
-    @include big-screen {
-        text-align: center;
-    }
 }
 
-/*h3 : homepage: nestés dans figcaption */
-
-h4 { /*menu titre des resto avec coeur à liker - display: flex*/
-    font-family: $font-title;
-    font-size: $fontsize_h4;
-}
-
-h5 { /* menu titre des dishes__item*/
-    margin: 0;
-    font-size: $fontsize_h5;
-    font-weight: bold;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+h3 {
+    font-size: $fontsize_h3;
 }
 
 p {
     font-size: $fontsize_p;
     margin: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    
 }
 
 .fa-arrow-left {

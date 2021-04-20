@@ -6,11 +6,9 @@ $font-title: 'shrikhand';
 $fontsize_h1: 1.2em;
 $fontsize_h2: 1em;
 $fontsize_h3: 0.9em;
-$fontsize_h4: 1.2em;
-$fontsize_h5: 0.9em;
 $fontsize_p: 0.8em;
 $fontsize_i: 1.2em;
-$fontsize_btn: 1em;
+$fontsize_btn: 1ems;
 
 // COULEURS 
 $primary-color: #9356DC;
@@ -30,6 +28,7 @@ $light-PinkPurple_background: radial-gradient(at top left, lighten($secondary-co
 
 // BORDER-RADIUS 
 $br_select: 15px;
+$br_check: 0 15px 15px 0;
 $br_restaurant-img: 15px 15px 0 0;
 $br_bg_menu: 40px 40px;
 $br_btn: 30px;
@@ -41,4 +40,4 @@ $margin-top-btn: 15px;
 // CHECK TRANSITION
 $check-apparition-time: 800ms;
 
-$check-width: 15%;
+$price-width: 25%;
